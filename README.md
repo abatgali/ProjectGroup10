@@ -11,7 +11,7 @@ Website's Functionality:
 
 Connecting GitHub & syncing all files to PhpStorm locally:
 1. Open browser & login to GitHub account.
-2. Open PhpStorm & select projects if not already.
+2. Open PhpStorm & select 'Projects' if not already selected.
 3. Click 'Get from VCS'.
 4. Click GitHub, should open new webpage.
 5. Grant all required permissions.
