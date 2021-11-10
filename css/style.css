@@ -1,0 +1,154 @@
+/*
+    Name:           James Ritter
+    Date:           November 1, 2021
+    Description:    Main style sheet for Lewie's
+*/
+
+body {
+    background-image: url("../images/home_1440.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container {
+    margin: auto;
+    width: 100%;
+    color: white;
+}
+
+header {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+/* NAVIGATION */
+nav {
+    border: 1px solid black;
+    border-radius: 2em;
+    margin: 1.25em;
+}
+
+nav li {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:link {
+    color: red;
+}
+
+nav a:visited {
+    color: darkorange;
+}
+
+nav a:hover {
+    color: white;
+}
+
+nav a.current {
+    color: gold;
+}
+
+/* Home Page */
+.indexTop {
+    color: white;
+    text-align: center;
+    border: 1px solid black;
+    margin: 1.25em;
+    padding: 1.25em;
+}
+
+.indexMid {
+    color: white;
+    border: 1px solid black;
+    margin: 1.25em;
+    padding: 1.25em;
+}
+
+.indexMid h2 {
+    text-align: center;
+}
+
+.featureItems {
+    text-align: center;
+    margin: 1.25em;
+    padding: 1.25em;
+}
+
+.googleMap {
+    text-align: center;
+    margin: 1.25em;
+    padding: 1.25em;
+}
+
+/* About Us Page*/
+.aboutTop {
+    text-align: center;
+    border: 1px solid black;
+    margin: 1.25em;
+    padding: 1.25em;
+}
+
+.aboutMid {
+    border: 1px solid black;
+    margin: 1.25em;
+    padding: 1.25em;
+}
+
+.aboutMid article {
+    text-align: left;
+    padding: 1.25em;
+}
+
+.aboutMid aside {
+    text-align: right;
+    padding: 1.25em;
+}
+
+.aboutBottom {
+    text-align: center;
+    border: 1px solid black;
+    margin: 1.25em;
+    padding: 1.25em;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+@media screen and (min-width: 900px){
+    .featureItems {
+        display: inline;
+    }
+
+}
+
+
+
+/*Coloring for layout*/
+/*
+.container {
+    background-color: black;
+}
+header {
+    background-color: orange;
+}
+nav {
+    background-color: blue;
+}
+footer {
+    background-color: pink;
+}
