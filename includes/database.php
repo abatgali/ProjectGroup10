@@ -14,7 +14,7 @@ $login = "phpuser";
 $password = "phpuser";
 $database = "entrees_louies_db"; //database name.....
 $tblCategoriess = "categoriess"; //categoriess table
-$tblMenu_items = "menu_items";   //menu_items table
+$tblMenu = "menu_items";   //menu_items table
 
 //connecting to MySQL server
 $conn = @new mysqli($host, $login, $password, $database);

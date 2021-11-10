@@ -3,15 +3,24 @@
  * Date: 11/10/2021*
  * File: listmenu.php*
  * Description: Hopefully this lists something*/
-require_once('includes/database.php');
 
-$sql = "SELECT Item_ID, PProduct_name, category_id, Price FROM $tblMenu_items";
+$page_title = "Menu";
+require 'includes/header.php';
+require_once('includes/database.php');
+//Use a select statement to retrieve information form the
+//men_items table
+
+$sql = "SELECT Item_ID, Product_name, category_id, Price FROM $tblMenu_items";
+
+
 
 //to attempt a query execute
 $query = $conn->query($sql);
 
+//Error handling
 if(!$query){
     $error = "Oops: ". $conn->error;
+    $conn->close();
     $conn->close();
     header("Location: error.php?m=$error");
     exit();

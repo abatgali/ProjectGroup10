@@ -3,7 +3,7 @@
  * Date: 11/10/2021*
  * File: index.php*
  * Description: */
-$title = "Lewi's Chinese Bistro - Homepage";
+$page_title = "Lewi's Chinese Bistro - Homepage";
 
 require_once("includes/header.php");
 ?>
