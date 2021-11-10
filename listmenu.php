@@ -1,5 +1,5 @@
 <?php
-/*** Author: your name*
+/*** Author: Alex Weber*
  * Date: 11/10/2021*
  * File: listmenu.php*
  * Description: Hopefully this lists something*/
