@@ -8,7 +8,12 @@
 
 require_once('database.php');
 //mock file to try to run the database statement
-
+if(!filter_has_var(INPUT_GET,"id")){
+    $error = "Your request cannot be processed since there there was a problem.";
+    $conn->close();
+    header("Location: error.php?m=$error");
+    die();
+}
 $id = filter_input(INPUT_GET,"id",FILTER_SANITIZE_NUMBER_INT);
 //attempting to execute a SELECT statement
 //something isn't write in this statement could be identification or something like that.
@@ -29,6 +34,12 @@ if(!$query){
 }
 
 $row = $query->fetch_assoc();
+if(!$row){
+    $error = "Menu Item not found";
+    $conn->close();
+    header("Location: error.php?m=$error");
+    die();
+}
 ?>
 <h2>Okay we can design this on thursday or something</h2>
 <!-- This could be our label-->
