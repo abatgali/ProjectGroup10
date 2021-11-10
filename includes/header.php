@@ -1,10 +1,17 @@
-<?php
-/**
- * Author: Anant Batgali
- * Date: 11/10/21
- * File: header.php
- * Description:
- */ ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/main.css">
+        <title><?php $title ?></title>
+
+    </head>
+    <body>
+
+
+
+
+
+
 
 
 
