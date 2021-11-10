@@ -8,19 +8,10 @@
 
 require_once('database.php');
 //mock file to try to run the database statement
-if(!filter_has_var(INPUT_GET,"id")){
-    $error = "Your request cannot be processed since there there was a problem.";
-    $conn->close();
-    header("Location: error.php?m=$error");
-    die();
-}
-$id = filter_input(INPUT_GET,"id",FILTER_SANITIZE_NUMBER_INT);
-//attempting to execute a SELECT statement
+
 //something isn't write in this statement could be identification or something like that.
 $sql = "SELECT * 
-FROM $tblCategoriess, $tblMenu_items
-WHERE categoriess.category_id = menu_items.category_id
-AND id = $id";
+FROM $tblCategoriess, $tblMenu_items";
 
 //attempting to execute the query
 $query = $conn->query($sql);
