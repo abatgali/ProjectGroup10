@@ -54,15 +54,15 @@ if ($query->num_rows == 0) {
     exit;
 } ?>
 
-    <div>
-        <div class="menuDetails">
+    <div class="menuDetails">
+        <div class="row header">
             <div>Product Name</div>
             <div>Description</div>
             <div>Price</div>
         </div>
         <!-- insert a row into the table for each book -->
         <?php while ($row = $query->fetch_assoc()) {?>
-            <div class = "content">
+            <div class = "row">
                 <div><?= $row['Product_name'] ?></div>
                 <div><?= $row['Description'] ?></div>
                 <div><?= $row['Price'] ?></div>
