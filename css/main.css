@@ -137,6 +137,11 @@ footer p {
     margin: 0;
 }
 
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
 
 @media screen and (min-width: 900px) {
 
