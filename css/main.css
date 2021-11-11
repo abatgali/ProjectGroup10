@@ -181,6 +181,7 @@ footer {
 
 .menuItems .row {
     display: flex;
+    flex-direction: row;
 }
 
 .menuItems .row:nth-child(even) {
