@@ -2,10 +2,10 @@
 /*** Author: Alex Weber*
  * Date: 11/10/2021*
  * File: listmenu.php*
- * Description: Hopefully this lists something*/
+ * Description: THIS FILE CONNECTS OUR WEBPAGE TO THE entrees_louies DATABASE*/
 
-$page_title = "Menu";
-require 'includes/header.php';
+$title = "Menu";
+
 require 'includes/head.php';
 require_once('includes/database.php');
 //Use a select statement to retrieve information form the
