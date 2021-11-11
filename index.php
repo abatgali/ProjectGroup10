@@ -44,29 +44,29 @@ require("includes/head.php");
             <h2>Featured Items</h2>
             <div class="featureItems">
                 <div class="feature1">
-                    <img src="images/chow_mein.jpeg" alt="Chow Mein">
-                    <p>Category Name</p>
+                    <img src="images/chow_mein.jpeg" alt="Chow Mein" width="400px">
+                    <p>Chow Mein</p>
                 </div>
                 <div class="feature2">
-                    <img src="images/crab_rangoon.jpg" alt="Crab Rangoon">
-                    <p>Category Name</p>
+                    <img src="images/crab_rangoon.jpg" alt="Crab Rangoon" width="400px">
+                    <p>Crab Rangoon</p>
                 </div>
                 <div class="feature3">
-                    <img src="images/fried_rice.jpg" alt="Fried Rice">
-                    <p>Category Name</p>
+                    <img src="images/fried_rice.jpg" alt="Fried Rice" width="400px">
+                    <p>Fried Rice</p>
                 </div>
                 <div class="feature4">
-                    <img src="images/gen_tso.jpg" alt="General Tso's">
-                    <p>Category Name</p>
+                    <img src="images/gen_tso.jpg" alt="General Tso's" width="400px">
+                    <p>General Tso's Chicken</p>
                 </div>
-                <div class="feature5">
+                <!--<div class="feature5">
                     <input type="image" >
                     <p>Category Name</p>
                 </div>
                 <div class="feature6">
                     <input type="image">
                     <p>Category Name</p>
-                </div>
+                </div>-->
             </div>
         </div>
         <div class="googleMap">
