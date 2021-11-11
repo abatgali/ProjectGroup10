@@ -10,9 +10,7 @@ require_once('includes/database.php');
 //Use a select statement to retrieve information form the
 //men_items table
 
-$sql = "SELECT Item_ID, Product_name, category_id, Price FROM $tblMenu_items";
-
-
+$sql = "SELECT Item_id, Product_name,Category_id,Price FROM $tblMenu";
 
 //to attempt a query execute
 $query = $conn->query($sql);
@@ -21,9 +19,8 @@ $query = $conn->query($sql);
 if(!$query){
     $error = "Oops: ". $conn->error;
     $conn->close();
-    $conn->close();
     header("Location: error.php?m=$error");
-    exit();
+    exit;
 }
 $row = $query->fetch_assoc();
 if(!$row){
@@ -45,10 +42,10 @@ if(!$row){
     <!-- add PHP code here to list all menu items from the "menu" table -->
     <?php while($row = $query->fetch_assoc()){?>
         <div class="row">
-            <div class="col1"><?= $row['Item_ID']?></div>
+            <div class="col1"><?= $row['Item_id']?></div>
             <div class="col2"><?= $row['Product_name']?></div>
-            <div class="col3"><?= $row['category_id']?></div>
-            <div class="col4"><?= $row['price']?></div>
+            <div class="col3"><?= $row['Category_id']?></div>
+            <div class="col4"><?= $row['Price']?></div>
         </div>
     <?php }?>
 </div>
