@@ -6,7 +6,7 @@
     Description: Footer
  */
 ?>
-
+</body>
     <footer>
         <p>&copy; 2001-<span id="copyright">20XX</span>. Lewie's Chinese Bistro</p>
         <p>123 Mockup Street</p>

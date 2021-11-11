@@ -5,13 +5,10 @@
  * Description: This script displays details of a particular menu item*/
 
 $title = "Item Details";
-require_once 'includes/head.php';
+require_once('includes/head.php');
 require_once('includes/database.php');
 
-
-$Item_id = filter_input(INPUT_GET,"Item_id",FILTER_SANITIZE_NUMBER_INT);
-
-$sql = "SELECT Product_name, Description, Price
+$sql = "SELECT *
 FROM $tblMenu
 WHERE menu_items.Item_id = Item_id";
 
@@ -19,14 +16,14 @@ WHERE menu_items.Item_id = Item_id";
 $query = $conn->query($sql);
 
 //handle errors
-if(!$query){
-    $error = "Selection failed: ". $conn->error;
+if (!$query) {
+    $error = "Selection failed: " . $conn->error;
     $conn->close();
     header("Location: error.php?m=$error");
     die();
 }
 $row = $query->fetch_assoc();
-if(!$row){
+if (!$row) {
     $error = "Menu Item not found";
     $conn->close();
     header("Location: error.php?m=$error");
@@ -37,15 +34,15 @@ if(!$row){
     <div class="menuDetails">
         <div class="label">
             <!-- display item attributes  -->
-            <div>Product Name: </div>
-            <div>Description: </div>
-            <div>Price: </div>
+            <div>Product Name:</div>
+            <div>Description:</div>
+            <div>Price:</div>
         </div>
         <div class="content">
             <!-- display item details -->
             <div><?= $row['Product_name'] ?></div>
-            <div><?= $row['Description']?></div>
-            <div><?= $row['Price']?></div>
+            <div><?= $row['Description'] ?></div>
+            <div><?= $row['Price'] ?></div>
         </div>
     </div>
 
