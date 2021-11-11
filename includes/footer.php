@@ -1,11 +1,17 @@
-<div id="footer">
-    <h3>Chinese Bistro</h3>
-    <p>440 Associate Avenue</p>
-    <p>Informatics, UG 46205</p>
-    <p><a href="tel: 317-278-9536">(317)-278-9536</a></p>
-    <p>Copyright &copy;  Lewi's Bistro. All Rights Reserved.</p>
-</div>
-    </body>
+<?php
+/*
+    Author: James Ritter
+    Date: $(DATE)
+    File: $(FILE_NAME)
+    Description: Footer
+ */
+?>
+
+    <footer>
+        <p>&copy; 2001-<span id="copyright">20XX</span>. Lewie's Chinese Bistro</p>
+        <p>123 Mockup Street</p>
+        <p>Indianapolis, IN 46202</p>
+        <p>(317) 555-5555</p>
+    </footer>
+    <script src="../website/scripts/copyright.js"></script>
 </html>
-
-
