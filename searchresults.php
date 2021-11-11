@@ -6,7 +6,7 @@
  * Description: this page outputs search results and connects to the database
  */
 
-$page_title = "Search results";
+$title = "Search results";
 
 require_once ('includes/header.php');
 require_once ('includes/database.php');
@@ -25,10 +25,9 @@ $term = filter_input(INPUT_GET, 'q', FILTER_SANITIZE_STRING);
 $terms = explode(" ", $term);
 
 // select statement using pattern search. Multiple terms are concatenated in the loop
-$sql = "SELECT id, title, description, price
+$sql = "SELECT Product_name, Description, Price
     FROM $tblMenu
     WHERE ";
-
 foreach ($terms as $t) {
     $sql .= "Product_name LIKE '%$t%' AND "; // removing the extra "AND " at the end of the string
 }
@@ -64,9 +63,9 @@ if ($query->num_rows == 0) {
         <!-- insert a row into the table for each book -->
         <?php while ($row = $query->fetch_assoc()) {?>
             <div class = "content">
-                <div><a href="itemDetails.php?id=<?= $row['id'] ?>"><?= $row['Product_name'] ?></a></div>
+                <div><?= $row['Product_name'] ?></div>
                 <div><?= $row['Description'] ?></div>
-                <div><?= $row['price'] ?></div>
+                <div><?= $row['Price'] ?></div>
             </div>
         <?php } ?>
     </div>
