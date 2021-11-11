@@ -2,7 +2,7 @@
 /*
  *Author: James Ritter
  *Date: 11/10/2021
- *File: head.php
+ *File: header.php
  *Description:
  */
 ?>
