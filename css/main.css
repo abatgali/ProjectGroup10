@@ -181,7 +181,6 @@ footer {
 
 .menuItems .row {
     display: flex;
-    flex-direction: row;
 }
 
 .menuItems .row:nth-child(even) {
@@ -225,6 +224,11 @@ footer {
 .menuDetails .content div {
     min-height: 32px;
     width: 500px;
+}
+
+.searchTable td, th{
+    padding: 15px;
+    text-align: left;
 }
 
 /*
