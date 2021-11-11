@@ -18,19 +18,6 @@ require("includes/head.php");
 ?>
     <body>
     <div class="container">
-        <header>
-            <h1>Lewie's Chinese Bistro</h1>
-        </header>
-        <nav>
-            <ul>
-                <!--The class "current" allows for highlight in nav-->
-                <li><a class="current" href="index.php">Home</a></li>
-                <li><a href="listmenu.php">Menu</a></li>
-                <li><a href="order.php">Order</a></li>
-                <li><a href="about.php">About Us</a></li>
-                <li><a href="contact.php">Contact Us</a></li>
-            </ul>
-        </nav>
         <br>
         <div class="indexTop">
             <h2>Food is our Specialty</h2>
