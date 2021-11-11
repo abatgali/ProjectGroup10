@@ -47,6 +47,9 @@ if(!$row){
             </ul>
         </nav>
         <h2>Menu Items</h2>
+        <div id="search">
+            <input type="text" value="Search...">
+        </div>
         <div class="menuItems">
             <div class="booklist">
                 <div class="col1">Product: </div>
