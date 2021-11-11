@@ -53,7 +53,6 @@ if ($query->num_rows == 0) {
     include ('includes/footer.php');
     exit;
 } ?>
-
     <div class="menuDetails">
         <div class="row header">
             <div>Product Name</div>

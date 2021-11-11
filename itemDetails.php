@@ -8,11 +8,11 @@ $title = "Item Details";
 require_once('includes/header.php');
 require_once('includes/database.php');
 
-$Item_id = filter_input(INPUT_GET,"Item_id");
+$Item_id = filter_input(INPUT_GET,"Item_id",FILTER_SANITIZE_NUMBER_INT);
 
-$sql = "SELECT Product_name, Description, Price
+$sql = "SELECT *
 FROM $tblMenu
-WHERE  ";
+WHERE menu_items.Item_id = Item_id";
 
 //Execute the query
 $query = $conn->query($sql);
