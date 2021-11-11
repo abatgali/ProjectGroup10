@@ -203,5 +203,27 @@ footer {
 .menuItems .col3 {
     width: 200px;
 }
+/* styles of the book details table */
+.menuDetails{
+    display: flex;
+}
+
+.menuDetails img {
+    width: 150px;
+}
+.menuDetails .cover {
+    min-width: 200px;
+}
+
+.menuDetails .label div {
+    width: 100px;
+    font-weight: 600;
+    height: 32px;
+}
+
+.menuDetails .content div {
+    min-height: 32px;
+    width: 500px;
+}
 
 /*

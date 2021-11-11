@@ -11,7 +11,8 @@ require_once('includes/database.php');
 //Use a select statement to retrieve information form the
 //menu_items table
 
-$sql = "SELECT Item_id, Product_name,Category_id,Price,Description FROM $tblMenu";
+$sql = "SELECT Item_id, Product_name,Price, Description
+FROM $tblMenu";
 
 //to attempt a query execute
 $query = $conn->query($sql);
@@ -59,11 +60,23 @@ if(!$row){
             <!-- add PHP code here to list all menu items from the "menu" table -->
             <?php while($row = $query->fetch_assoc()){?>
                 <div class="row">
+                    <div class="col1">
+                        <a href="itemDetails.php?id=<?= $row['Item_id']?>"><?= $row['Product_name']?></a>
+                    </div>
+                    <div class="col2"><?= $row['Description']?></div>
+                    <div class="col3"><?= $row['Price']?></div>
+                </div>
+            <?php }?>
+
+            <?php while($row = $query->fetch_assoc()) {?>
+                <div class="row">
                     <div class="col1"><?= $row['Product_name']?></div>
                     <div class="col2"><?= $row['Description']?></div>
                     <div class="col3"><?= $row['Price']?></div>
                 </div>
             <?php }?>
+
+
         </div>
     </div>
     <?php
