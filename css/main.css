@@ -79,11 +79,10 @@ nav a.current {
     text-align: center;
     margin: 1.25em;
     padding: 1.25em;
-    display: flex;
+    display: inline;
 }
 
 .feature1 img, .feature2 img, .feature3 img, .feature4 img, .feature5 img, .feature6 img{
-    flex-direction: row;
     border-radius: 7em;
     width: 50%;
 }
@@ -125,6 +124,9 @@ nav a.current {
     padding: 1.25em;
 }
 
+/*List Menu*/
+
+
 /* FOOTER */
 footer {
     text-align: center;
@@ -136,10 +138,7 @@ footer p {
 }
 
 
-@media screen and (min-width: 900px){
-    .featureItems {
-        display: inline;
-    }
+@media screen and (min-width: 900px) {
 
 }
 

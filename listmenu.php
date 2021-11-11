@@ -31,29 +31,39 @@ if(!$row){
     die();
 }
 ?>
-<nav>
-    <ul>
-        <li><a href="index.php">Home</a></li>
-        <!--The class "current" allows for highlight in nav-->
-        <li><a class="current" href="listmenu.php">Menu</a></li>
-        <li><a href="order.php">Order</a></li>
-        <li><a href="about.php">About Us</a></li>
-        <li><a href="contact.php">Contact Us</a></li>
-    </ul>
-</nav>
-<h2>Menu Items</h2>
-<div>
-    <div class="booklist">
-        <div class="col1">Product: </div>
-        <div class="col2">Description</div>
-        <div class="col3">Price</div>
-    </div>
-    <!-- add PHP code here to list all menu items from the "menu" table -->
-    <?php while($row = $query->fetch_assoc()){?>
-        <div class="row">
-            <div class="col1"><?= $row['Product_name']?></div>
-            <div class="col2"><?= $row['Description']?></div>
-            <div class="col3"><?= $row['Price']?></div>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lewie's Chinese Bistro</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <!--The class "current" allows for highlight in nav-->
+                <li><a class="current" href="listmenu.php">Menu</a></li>
+                <li><a href="order.php">Order</a></li>
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
+            </ul>
+        </nav>
+        <h2>Menu Items</h2>
+        <div class="menuItems">
+            <div class="booklist">
+                <div class="col1">Product: </div>
+                <div class="col2">Description</div>
+                <div class="col3">Price</div>
+            </div>
+            <!-- add PHP code here to list all menu items from the "menu" table -->
+            <?php while($row = $query->fetch_assoc()){?>
+                <div class="row">
+                    <div class="col1"><?= $row['Product_name']?></div>
+                    <div class="col2"><?= $row['Description']?></div>
+                    <div class="col3"><?= $row['Price']?></div>
+                </div>
+            <?php }?>
         </div>
-    <?php }?>
-</div>
+    </div>
+    <?php
+    require_once ("includes/footer.php");
+    ?>
+</body>
