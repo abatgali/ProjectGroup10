@@ -54,19 +54,16 @@ if ($query->num_rows == 0) {
     exit;
 } ?>
     <div class="searchTable">
-        <th class="row header">
-            <div>Product Name</div>
-            <div>Description</div>
-            <div>Price</div>
-        </th>
         <!-- insert a row into the table for each book -->
         <?php while ($row = $query->fetch_assoc()) {?>
+            <hr>
             <td>
                 <div><?= $row['Product_name'] ?></div>
                 <div><?= $row['Description'] ?></div>
                 <div><?= $row['Price'] ?></div>
             </td>
         <?php } ?>
+        <hr>
     </div>
 <?php
 include ('includes/footer.php');
