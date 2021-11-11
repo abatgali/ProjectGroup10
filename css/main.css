@@ -79,6 +79,13 @@ nav a.current {
     text-align: center;
     margin: 1.25em;
     padding: 1.25em;
+    display: flex;
+}
+
+.feature1 img, .feature2 img, .feature3 img, .feature4 img, .feature5 img, .feature6 img{
+    flex-direction: row;
+    border-radius: 7em;
+    width: 50%;
 }
 
 .googleMap {
