@@ -31,7 +31,16 @@ if(!$row){
     die();
 }
 ?>
-
+<nav>
+    <ul>
+        <li><a href="index.php">Home</a></li>
+        <!--The class "current" allows for highlight in nav-->
+        <li><a class="current" href="menu.php">Menu</a></li>
+        <li><a href="order.php">Order</a></li>
+        <li><a href="about.php">About Us</a></li>
+        <li><a href="contact.php">Contact Us</a></li>
+    </ul>
+</nav>
 <h2>Menu Items</h2>
 <div>
     <div class="booklist">
