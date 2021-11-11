@@ -13,5 +13,5 @@
         <p>Indianapolis, IN 46202</p>
         <p>(317) 555-5555</p>
     </footer>
-    <script src="../website/scripts/copyright.js"></script>
+    <script src="../ProjectGroup10/scripts/copyright.js"></script>
 </html>
