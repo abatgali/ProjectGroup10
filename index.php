@@ -35,7 +35,7 @@ require("includes/head.php");
         <div class="indexTop">
             <h2>Food is our Specialty</h2>
             <p>Our creative, elevated food and beverage program combines satisfying staples with imaginative twists.  From bossy brunches and happy hours to family dinners, special occasions, and everything in between.  Lewie's Chinese Bistro has something for everyone.</p>
-            <input type="button" value="View Menu" onclick="window.location.href = 'menu.php'">
+            <input type="button" value="View Menu" onclick="window.location.href='listmenu.php'">
             <br><br>
             <input type="button" value="Make a Reservation">
         </div>
