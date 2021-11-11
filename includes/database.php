@@ -13,8 +13,8 @@
 $host = "localhost";
 $login = "phpuser";
 $password = "phpuser";
-$database = "entrees_louies_db"; //database name.....
-$tblCategoriess = "categoriess"; //categoriess table
+$database = "entrees_louies"; //database name.....
+$tblCategories = "categories"; //categories table
 $tblMenu = "menu_items";   //menu_items table
 
 
