@@ -6,7 +6,7 @@
 
 $title = "Menu";
 
-require_once('includes/head.php');
+require_once('includes/header.php');
 require_once('includes/database.php');
 //Use a select statement to retrieve information form the
 //menu_items table

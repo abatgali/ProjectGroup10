@@ -5,7 +5,7 @@
  * Description: This script displays details of a particular menu item*/
 
 $title = "Item Details";
-require_once('includes/head.php');
+require_once('includes/header.php');
 require_once('includes/database.php');
 
 $sql = "SELECT *

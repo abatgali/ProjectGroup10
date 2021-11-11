@@ -14,7 +14,7 @@ $title = "Lewie's Chinese Bistro";
 <!DOCTYPE html>
 <html lang="en">
 <?php
-require("includes/head.php");
+require("includes/header.php");
 ?>
     <body>
     <div class="container">
