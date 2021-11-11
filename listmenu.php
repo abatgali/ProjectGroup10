@@ -9,7 +9,7 @@ $title = "Menu";
 require 'includes/head.php';
 require_once('includes/database.php');
 //Use a select statement to retrieve information form the
-//men_items table
+//menu_items table
 
 $sql = "SELECT Item_id, Product_name,Category_id,Price,Description FROM $tblMenu";
 
@@ -48,7 +48,7 @@ if(!$row){
         </nav>
         <h2>Menu Items</h2>
         <div class="menuItems">
-            <div class="booklist">
+            <div class="row header">
                 <div class="col1">Product: </div>
                 <div class="col2">Description</div>
                 <div class="col3">Price</div>

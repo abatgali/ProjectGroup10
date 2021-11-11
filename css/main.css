@@ -125,7 +125,10 @@ nav a.current {
 }
 
 /*List Menu*/
-
+.menuItems {
+    display: flex;
+    flex-direction: column;
+}
 
 /* FOOTER */
 footer {
@@ -158,3 +161,42 @@ nav {
 footer {
     background-color: pink;
 }
+
+
+
+
+/* styles of the book list table */
+.menuItems {
+    display: flex;
+    flex-direction: column;
+}
+.menuItems div {
+    padding: 3px 5px;
+}
+
+.menuItems .row {
+    display: flex;
+}
+
+.menuItems .row:nth-child(even) {
+}
+
+.menuItems .header {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    font-weight: 600;
+}
+
+.menuItems .col1 {
+    width: 300px;
+}
+
+.menuItems .col2 {
+    width: 300px;
+}
+
+.menuItems .col3 {
+    width: 200px;
+}
+
+/*
