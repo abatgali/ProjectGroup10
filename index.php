@@ -25,7 +25,7 @@ require("includes/head.php");
             <ul>
                 <!--The class "current" allows for highlight in nav-->
                 <li><a class="current" href="index.php">Home</a></li>
-                <li><a href="menu.php">Menu</a></li>
+                <li><a href="listmenu.php">Menu</a></li>
                 <li><a href="order.php">Order</a></li>
                 <li><a href="about.php">About Us</a></li>
                 <li><a href="contact.php">Contact Us</a></li>
