@@ -47,10 +47,12 @@ if(!$row){
                 <li><a href="contact.php">Contact Us</a></li>
             </ul>
         </nav>
+        <!-- Search bar -->
+        <form action="searchresults.php" method="get">
+            <input type="text" name="q" size="40" required />&nbsp;&nbsp;
+            <input type="submit" name="Submit" id="Submit" value="Search items" />
+        </form>
         <h2>Menu Items</h2>
-        <div id="search">
-            <input type="text" value="Search...">
-        </div>
         <div class="menuItems">
             <div class="row header">
                 <div class="col1">Product: </div>
