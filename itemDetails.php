@@ -11,9 +11,9 @@ require_once('includes/database.php');
 
 $Item_id = filter_input(INPUT_GET,"Item_id",FILTER_SANITIZE_NUMBER_INT);
 
-$sql = "SELECT * 
+$sql = "SELECT Product_name, Description, Price
 FROM $tblMenu
-WHERE menu_items.Item_id";
+WHERE menu_items.Item_id = Item_id";
 
 //Execute the query
 $query = $conn->query($sql);
@@ -36,13 +36,13 @@ if(!$row){
     <h2>Book Details</h2>
     <div class="menuDetails">
         <div class="label">
-            <!-- display book attributes  -->
+            <!-- display item attributes  -->
             <div>Product Name: </div>
             <div>Description: </div>
             <div>Price: </div>
         </div>
         <div class="content">
-            <!-- display book details -->
+            <!-- display item details -->
             <div><?= $row['Product_name'] ?></div>
             <div><?= $row['Description']?></div>
             <div><?= $row['Price']?></div>
