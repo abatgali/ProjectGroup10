@@ -8,7 +8,7 @@ $title = "Item Details";
 require_once('includes/header.php');
 require_once('includes/database.php');
 
-$Item_id = filter_has_var(INPUT_GET,"Item_id",FILTER_SANITIZE_NUMBER_INT);
+$Item_id = filter_input(INPUT_GET,"Item_id");
 
 $sql = "SELECT Product_name, Description, Price
 FROM $tblMenu
