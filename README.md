@@ -1,5 +1,5 @@
 # ProjectGroup10
-# Lewi's Chinese Bistro
+# Lewie's Chinese Bistro
 
 Website's Functionality: 
 - Users will be able to view the menu
