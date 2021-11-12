@@ -3,27 +3,42 @@
  * Date: 11/11/2021*
  * File: itemDetails.php*
  * Description: This script displays details of a particular menu item*/
+?>
 
+<?php
 $title = "Item Details";
 require_once('includes/header.php');
 require_once('includes/database.php');
 
 $Item_id = filter_input(INPUT_GET,"Item_id",FILTER_SANITIZE_NUMBER_INT);
 
-$sql = "SELECT *
-FROM $tblMenu
-WHERE menu_items.Item_id = Item_id";
+//if item id cannot be retrieved, terminate the script.
+if (!filter_has_var(INPUT_GET, "id")) {
+    $error = "Your request cannot be processed since there was a problem retrieving item id.";
+    $conn -> close();
+    header("Location: error.php?m=$error");
+    die();
+}
+
+//retrieve item id from a query string variable.
+$id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT);
+
+//select statement
+$sql = "SELECT * 
+        FROM $tblMenu
+        WHERE Item_id = $id";
 
 //Execute the query
-$query = $conn->query($sql);
+$query = $conn -> query($sql);
 
 //handle errors
 if (!$query) {
-    $error = "Selection failed: " . $conn->error;
+    $error = "Selection failed: " . $conn -> error;
     $conn->close();
     header("Location: error.php?m=$error");
     die();
 }
+
 $row = $query->fetch_assoc();
 if (!$row) {
     $error = "Menu Item not found";
@@ -32,7 +47,7 @@ if (!$row) {
     die();
 }
 ?>
-    <h2>Book Details</h2>
+    <h2>Our Menu Items</h2>
     <div class="menuDetails">
         <div class="label">
             <!-- display item attributes  -->
@@ -47,7 +62,5 @@ if (!$row) {
             <div><?= $row['Price'] ?></div>
         </div>
     </div>
-
-
 <?php
 require_once('includes/footer.php');

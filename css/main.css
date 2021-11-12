@@ -130,6 +130,11 @@ nav a.current {
     flex-direction: column;
 }
 
+/*Item Details*/
+.row a{
+    color: white;
+}
+
 /* FOOTER */
 footer {
     text-align: center;
@@ -144,31 +149,6 @@ footer a {
     text-decoration: none;
     color: white;
 }
-
-
-@media screen and (min-width: 900px) {
-
-}
-
-
-
-/*Coloring for layout*/
-/*
-.container {
-    background-color: black;
-}
-header {
-    background-color: orange;
-}
-nav {
-    background-color: blue;
-}
-footer {
-    background-color: pink;
-}
-
-
-
 
 /* styles of the book list table */
 .menuItems {
@@ -203,6 +183,7 @@ footer {
 .menuItems .col3 {
     width: 200px;
 }
+
 /* styles of the book details table */
 .menuDetails{
     display: flex;
@@ -231,4 +212,27 @@ footer {
     text-align: left;
 }
 
+@media screen and (min-width: 900px) {
+
+}
+
+
+
+/*Coloring for layout*/
 /*
+.container {
+    background-color: black;
+}
+header {
+    background-color: orange;
+}
+nav {
+    background-color: blue;
+}
+footer {
+    background-color: pink;
+}
+
+
+
+
