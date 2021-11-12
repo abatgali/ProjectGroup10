@@ -51,15 +51,15 @@ if (!$row) {
     <div class="menuDetails">
         <div class="label">
             <!-- display item attributes  -->
-            <div>Product Name:</div>
-            <div>Description:</div>
-            <div>Price:</div>
+            <div class="col1">Product Name:</div>
+            <div class="col2">Description:</div>
+            <div class="col3">Price:</div>
         </div>
         <div class="content">
             <!-- display item details -->
-            <div><?= $row['Product_name'] ?></div>
-            <div><?= $row['Description'] ?></div>
-            <div><?= $row['Price'] ?></div>
+            <div class="col1"><?= $row['Product_name'] ?></div>
+            <div class="col2"><?= $row['Description'] ?></div>
+            <div class="col3"><?= $row['Price'] ?></div>
         </div>
     </div>
 <?php
