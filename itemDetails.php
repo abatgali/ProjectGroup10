@@ -47,6 +47,7 @@ if (!$row) {
     die();
 }
 ?>
+<div class="container">
     <h2>Our Menu Items</h2>
     <div class="menuDetails">
         <div class="label">
@@ -62,5 +63,8 @@ if (!$row) {
             <div class="col3"><?= $row['Price'] ?></div>
         </div>
     </div>
-<?php
-require_once('includes/footer.php');
+    <br><br>
+    <?php
+    require_once('includes/footer.php');
+    ?>
+</div>
