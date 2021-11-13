@@ -35,6 +35,9 @@ if(isset($soup)){
 if((empty($all))&&(empty($app)) && (empty($ent)) && (empty($soup))){
     $sql = "SELECT * FROM $tblMenu";
 }
+//multiple select and handling
+//One condition for multiple sections
+
 
 //to attempt a query execute
 $query = $conn -> query($sql);
@@ -54,13 +57,13 @@ if (!$query) {
         <input type="checkbox" name="all" size="40" value="All" onchange="this.form.submit()"/>
         <label for="all">All Items</label>
 
-        <input type="checkbox" name="app" size="40" value="Appetizers" onchange="this.form.submit()" />
+        <input type="checkbox" name="app" size="40" value="Appetizers"/>
         <label for="appetizers">Appetizers</label>
 
-        <input type="checkbox" name="ent" size="40" value="Entrees" onchange="this.form.submit()"/>
+        <input type="checkbox" name="ent" size="40" value="Entrees"/>
         <label for="entrees">Entrees</label>
 
-        <input type="checkbox" name="soup" size="40" value="Soup" onchange="this.form.submit()"/>
+        <input type="checkbox" name="soup" size="40" value="Soup"/>
         <label for="soups">Soups</label>
     </form>
 
