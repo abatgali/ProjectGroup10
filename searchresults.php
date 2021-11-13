@@ -25,7 +25,7 @@ $term = filter_input(INPUT_GET, 'q', FILTER_SANITIZE_STRING);
 $terms = explode(" ", $term);
 
 // select statement using pattern search. Multiple terms are concatenated in the loop
-$sql = "SELECT Product_name, Description, Price
+$sql = "SELECT Product_name,Description, Price
     FROM $tblMenu
     WHERE ";
 foreach ($terms as $t) {
