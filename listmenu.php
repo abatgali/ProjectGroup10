@@ -15,6 +15,7 @@ $app = filter_input(INPUT_POST,'app');
 $ent = filter_input(INPUT_POST,'ent');
 $soup = filter_input(INPUT_POST,'soup');
 
+
 //Grabbing post data for all menu items
 if(isset($all)){
     $sql = "SELECT Item_id,Product_name,Description,Price FROM $tblMenu";
@@ -57,13 +58,13 @@ if (!$query) {
         <input type="checkbox" name="all" size="40" value="All" onchange="this.form.submit()"/>
         <label for="all">All Items</label>
 
-        <input type="checkbox" name="app" size="40" value="Appetizers"/>
+        <input type="checkbox" name="app" size="40" value="Appetizers" onchange="this.form.submit()"/>
         <label for="appetizers">Appetizers</label>
 
-        <input type="checkbox" name="ent" size="40" value="Entrees"/>
+        <input type="checkbox" name="ent" size="40" value="Entrees" onchange="this.form.submit()"/>
         <label for="entrees">Entrees</label>
 
-        <input type="checkbox" name="soup" size="40" value="Soup"/>
+        <input type="checkbox" name="soup" size="40" value="Soup" onchange="this.form.submit()"/>
         <label for="soups">Soups</label>
     </form>
 
