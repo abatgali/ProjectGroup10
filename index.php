@@ -9,7 +9,6 @@
 $title = "Lewie's Chinese Bistro";
 
 require("includes/header.php");
-
 ?>
         <br>
         <div class="indexTop">
