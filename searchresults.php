@@ -25,7 +25,7 @@ $term = filter_input(INPUT_GET, 'q', FILTER_SANITIZE_STRING);
 $terms = explode(" ", $term);
 
 // select statement using pattern search. Multiple terms are concatenated in the loop
-$sql = "SELECT Product_name,Description, Price
+$sql = "SELECT Product_name, Description, Price 
     FROM $tblMenu
     WHERE ";
 foreach ($terms as $t) {
@@ -35,12 +35,12 @@ foreach ($terms as $t) {
 $sql = rtrim($sql, "AND ");
 
 //execute the query
-$query = $conn->query($sql);
+$query = $conn -> query($sql);
 
 // Handle Selection errors
 if (!$query) {
-    $error = "Selection failed: ". $conn->error;
-    $conn->close();
+    $error = "Selection failed: " . $conn -> error;
+    $conn -> close();
     header("Location: error.php?m=$error");
     die();
 }
@@ -48,14 +48,14 @@ if (!$query) {
 ?>
     <h2>Search results for: '<?= $term ?>'</h2>
 <?php
-if ($query->num_rows == 0) {
+if ($query -> num_rows == 0) {
     echo "Your search '$term' did not match any menu items";
     include ('includes/footer.php');
-    exit;
+    exit();
 } ?>
     <div class="searchTable">
         <!-- insert a row into the table for each book -->
-        <?php while ($row = $query->fetch_assoc()) {?>
+        <?php while ($row = $query -> fetch_assoc()) {?>
             <hr>
             <td>
                 <div><?= $row['Product_name'] ?></div>
