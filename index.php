@@ -18,7 +18,6 @@ require("includes/header.php");
 ?>
     <body>
     <div class="container">
-        <br>
         <div class="indexTop">
             <h2>Food is our Specialty</h2>
             <p>Our creative, elevated food and beverage program combines satisfying staples with imaginative twists.  From bossy brunches and happy hours to family dinners, special occasions, and everything in between.  Lewie's Chinese Bistro has something for everyone.</p>
@@ -26,7 +25,6 @@ require("includes/header.php");
             <br><br>
             <input type="button" value="Make a Reservation">
         </div>
-        <br>
         <div class="indexMid">
             <h2>Featured Items</h2>
             <div class="featureItems">

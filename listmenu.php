@@ -3,7 +3,9 @@
  * Date: 11/10/2021*
  * File: listmenu.php*
  * Description: THIS FILE CONNECTS OUR WEBPAGE TO THE entrees_louies DATABASE*/
+?>
 
+<?php
 $title = "Our Menu";
 
 require_once('includes/header.php');
@@ -18,23 +20,31 @@ $soup = filter_input(INPUT_POST,'soup');
 
 //Grabbing post data for all menu items
 if(isset($all)){
-    $sql = "SELECT Item_id,Product_name,Description,Price FROM $tblMenu";
+    $sql = "SELECT Item_id, Product_name, Description, Price 
+            FROM $tblMenu";
 }
 //Grabbing post data for the appetizers
 if(isset($app)){
-    $sql = "SELECT Item_id,Product_name,Description,Price FROM $tblMenu WHERE $tblMenu.Category_id = 'a'";
+    $sql = "SELECT Item_id, Product_name, Description, Price 
+            FROM $tblMenu 
+            WHERE Category_id = 'a'";
 }
 //Grabbing post data for the entrees
 if(isset($ent)){
-    $sql = "SELECT Item_id,Product_name,Description,Price FROM $tblMenu WHERE $tblMenu.Category_id = 'ent'";
+    $sql = "SELECT Item_id, Product_name, Description, Price 
+            FROM $tblMenu 
+            WHERE Category_id = 'ent'";
 }
 //Grabbing post data for the soup
 if(isset($soup)){
-    $sql = "SELECT Item_id,Product_name,Description,Price FROM $tblMenu WHERE $tblMenu.Category_id = 's'";
+    $sql = "SELECT Item_id, Product_name, Description, Price 
+            FROM $tblMenu 
+            WHERE Category_id = 's'";
 }
 //Grabbing all menu items, menu display.
 if((empty($all))&&(empty($app)) && (empty($ent)) && (empty($soup))){
-    $sql = "SELECT * FROM $tblMenu";
+    $sql = "SELECT * 
+            FROM $tblMenu";
 }
 //multiple select and handling
 //One condition for multiple sections
@@ -45,7 +55,7 @@ $query = $conn -> query($sql);
 
 //Error handling
 if (!$query) {
-    $error = "Oops: " . $conn->error;
+    $error = "Oops: " . $conn -> error;
     $conn -> close();
     header("Location: error.php?m=$error");
     exit();
@@ -55,38 +65,38 @@ if (!$query) {
 <div class="container">
     <!--4 Checkboxes for the Filtering Honors Project-->
     <form action="" method="post">
-        <input type="checkbox" name="all" size="40" value="All" onchange="this.form.submit()"/>
+        <input type="checkbox" name="all" size="40" value="All" onchange="this.form.submit()">
         <label for="all">All Items</label>
 
-        <input type="checkbox" name="app" size="40" value="Appetizers" onchange="this.form.submit()"/>
+        <input type="checkbox" name="app" size="40" value="Appetizers" onchange="this.form.submit()">
         <label for="appetizers">Appetizers</label>
 
-        <input type="checkbox" name="ent" size="40" value="Entrees" onchange="this.form.submit()"/>
+        <input type="checkbox" name="ent" size="40" value="Entrees" onchange="this.form.submit()">
         <label for="entrees">Entrees</label>
 
-        <input type="checkbox" name="soup" size="40" value="Soup" onchange="this.form.submit()"/>
+        <input type="checkbox" name="soup" size="40" value="Soup" onchange="this.form.submit()">
         <label for="soups">Soups</label>
     </form>
 
     <form action="searchresults.php" method="get">
-        <input type="text" name="q" size="40" required  />&nbsp;&nbsp;
-        <input type="submit" name="Submit" id="Submit" value="Search items" />
+        <input type="text" name="q" size="40" required>&nbsp;&nbsp;
+        <input type="submit" name="Submit" id="Submit" value="Search items">
     </form>
 
-    <div class="menuItems">
+    <div class = "menuItems">
         <h2>Menu Items</h2>
-        <div class="row header">
-            <div class="col1">Product</div>
-            <div class="col2">Description</div>
-            <div class="col3">Price</div>
+        <div class = "row header">
+            <div class="col1" style="text-decoration: underline">Product</div>
+            <div class="col2" style="text-decoration: underline">Description</div>
+            <div class="col3" style="text-decoration: underline">Price</div>
         </div>
 
         <!-- add PHP code here to list all menu items from the "menu" table -->
         <?php while ($row = $query->fetch_assoc()) { ?>
-            <div class="row">
-                <div class="col1"><a href="itemDetails.php?id=<?= $row['Item_id'] ?>"><?= $row['Product_name'] ?></a></div>
+            <div class = "row">
+                <div class="col1"><a href = "itemDetails.php?id=<?= $row['Item_id'] ?>"><?= $row['Product_name'] ?></a></div>
                 <div class="col2"><?= $row['Description'] ?></div>
-                <div class="col3"><?= $row['Price'] ?></div>
+                <div class="col3">$<?= $row['Price'] ?></div>
             </div>
         <?php } ?>
     </div>
