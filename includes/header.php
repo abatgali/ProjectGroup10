@@ -18,16 +18,15 @@
     </head>
     <body>
     <div class="container">
-        <header>
-            <h1>Lewie's Chinese Bistro</h1>
-        </header>
         <nav>
-            <ul>
+            <ul id = "left_items">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="listmenu.php">Menu</a></li>
                 <li><a href="order.php">Order</a></li>
-                <li><a href="about.php">About Us</a></li>
-                <li><a href="contact.php">Contact Us</a></li>
+            </ul>
+                <h1 id = "header">Lewie's Chinese Bistro</h1>
+            <ul id = "right_items">
+                <li><a href="">Login</a></li>
+                <li><a href="">Cart</a></li>
             </ul>
         </nav>
-</html>

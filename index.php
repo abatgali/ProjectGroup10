@@ -5,19 +5,12 @@
  *File:         index.php
  *Description:  Home page
 */
-?>
 
-<?php
 $title = "Lewie's Chinese Bistro";
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-<?php
 require("includes/header.php");
+
 ?>
-    <body>
-    <div class="container">
         <br>
         <div class="indexTop">
             <h2>Food is our Specialty</h2>
@@ -62,9 +55,9 @@ require("includes/header.php");
             <!--Medium Map-->
             <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3066.4908700163323!2d-86.17141189863862!3d39.77353815232665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886b50b610e78ef3%3A0x90380174787dce3!2sLot%2083%2C%20Indianapolis%2C%20IN%2046202!5e0!3m2!1sen!2sus!4v1636575602046!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>-->
         </div>
-        <?php
-        require("includes/footer.php");
-        ?>
-    </div>
-    </body>
-</html>
+
+</body>
+<?php
+require("includes/footer.php");
+?>
+

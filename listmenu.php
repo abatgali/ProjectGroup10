@@ -48,7 +48,7 @@ if (!$query) {
 }
 ?>
 
-<div class="container">
+
     <!--4 Checkboxes for the Filtering Honors Project-->
     <form action="" method="post">
         <input type="checkbox" name="all" size="40" value="All" onchange="this.form.submit()"/>
@@ -63,7 +63,7 @@ if (!$query) {
         <input type="checkbox" name="soup" size="40" value="Soup" onchange="this.form.submit()"/>
         <label for="soups">Soups</label>
     </form>
-
+    <br>
     <form action="searchresults.php" method="get">
         <input type="text" name="q" size="40" required  />&nbsp;&nbsp;
         <input type="submit" name="Submit" id="Submit" value="Search items" />
@@ -87,7 +87,7 @@ if (!$query) {
         <?php } ?>
     </div>
 <br><br>
+
 <?php
 require_once("includes/footer.php");
-?>
-</div>
+

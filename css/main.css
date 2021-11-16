@@ -32,11 +32,19 @@ nav {
     border: 1px solid black;
     border-radius: 2em;
     margin: 1.25em;
+    padding: 0 5em 0 1.25em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
 }
 
 nav li {
     list-style-type: none;
-    text-align: center;
 }
 
 nav a {
@@ -56,6 +64,13 @@ nav a:hover {
     color: white;
 }
 
+#left_items {
+    min-width: 10em;
+}
+
+#right_items {
+    min-width: 5.5em;
+}
 /* Home Page */
 .indexTop {
     color: white;
@@ -222,6 +237,7 @@ form {
 footer {
     text-align: center;
     color: white;
+    padding: 2em 0 2em 0;
 }
 
 footer p {
