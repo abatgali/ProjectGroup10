@@ -25,7 +25,7 @@ $term = filter_input(INPUT_GET, 'q', FILTER_SANITIZE_STRING);
 $terms = explode(" ", $term);
 
 // select statement using pattern search. Multiple terms are concatenated in the loop
-$sql = "SELECT Product_name, Description, Price 
+$sql = "SELECT * 
     FROM $tblMenu
     WHERE ";
 foreach ($terms as $t) {
@@ -46,24 +46,27 @@ if (!$query) {
 }
 
 ?>
-    <h2>Search results for: '<?= $term ?>'</h2>
+    <h3>Search results for: '<?= $term ?>'</h3>
 <?php
 if ($query -> num_rows == 0) {
     echo "Your search '$term' did not match any menu items";
     include ('includes/footer.php');
     exit();
 } ?>
-    <div class="searchTable">
-        <!-- insert a row into the table for each book -->
+    <div class="menuItems">
+        <div class = "row header">
+            <div class="col1" style="text-decoration: underline">Product</div>
+            <div class="col2" style="text-decoration: underline">Description</div>
+            <div class="col3" style="text-decoration: underline">Price</div>
+        </div>
+        <!-- displaying each search result -->
         <?php while ($row = $query -> fetch_assoc()) {?>
-            <hr>
-            <td>
-                <div><?= $row['Product_name'] ?></div>
-                <div><?= $row['Description'] ?></div>
-                <div><?= $row['Price'] ?></div>
-            </td>
+        <div class="row">
+           <div class="col1"><a href="itemDetails.php?id=<?= $row['Item_id'] ?>"><?= $row['Product_name'] ?></a></div>
+            <div class="col2"><?= $row['Description'] ?></div>
+            <div class="col3"><?= $row['Price'] ?></div>
+        </div>
         <?php } ?>
-        <hr>
     </div>
 <?php
 include ('includes/footer.php');
