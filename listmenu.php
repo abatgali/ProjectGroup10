@@ -7,6 +7,7 @@
 
 <?php
 $title = "Our Menu";
+$menu_title = "Menu Items";
 
 require_once('includes/header.php');
 require_once('includes/database.php');
@@ -22,24 +23,34 @@ $soup   = filter_input(INPUT_POST,'soup');
 if(isset($all)){
     $sql = "SELECT Item_id, Product_name, Description, Price 
             FROM $tblMenu";
+
+    $menu_title = "Menu Items";
+
+
 }
 //Grabbing post data for the appetizers
 if(isset($app)){
     $sql = "SELECT Item_id, Product_name, Description, Price 
             FROM $tblMenu 
             WHERE Category_id = 'a'";
+
+    $menu_title = "Appetizers";
 }
 //Grabbing post data for the entrees
 if(isset($ent)){
     $sql = "SELECT Item_id, Product_name, Description, Price 
             FROM $tblMenu 
             WHERE Category_id = 'ent'";
+
+    $menu_title = "Entrees";
 }
 //Grabbing post data for the soup
 if(isset($soup)){
     $sql = "SELECT Item_id, Product_name, Description, Price 
             FROM $tblMenu 
             WHERE Category_id = 's'";
+
+    $menu_title = "Soups";
 }
 //Grabbing all menu items, menu display.
 if((empty($all))&&(empty($app)) && (empty($ent)) && (empty($soup))){
@@ -84,7 +95,7 @@ if (!$query) {
     </form>
 
     <div class="menuItems">
-        <h2>Menu Items</h2>
+        <h2><?php echo $menu_title ?></h2>
         <div class="row header">
             <div class="col1" style="text-decoration: underline">Product</div>
             <div class="col2" style="text-decoration: underline">Description</div>
