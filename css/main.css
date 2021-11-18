@@ -16,7 +16,7 @@ body {
     color: white;
 }
 
-.container h2 {
+.container h3 {
     margin: 1.25em;
     text-align: center;
 }
@@ -71,6 +71,7 @@ nav a:hover {
 #right_items {
     min-width: 5.5em;
 }
+
 /* Home Page */
 .indexTop {
     color: white;
@@ -228,10 +229,6 @@ form {
     width: auto;
 }
 
-.searchTable td, th{
-    padding: 15px;
-    text-align: left;
-}
 
 /* FOOTER */
 footer {
@@ -258,5 +255,38 @@ footer a {
     .feature1 img, .feature2 img, .feature3 img, .feature4 img, .feature5 img, .feature6 img{
         width: 90%;
         height: 150px;
+    }
+}
+
+/* makes nav responsive
+ using flex order */
+@media screen and (max-width: 860px) {
+
+    nav {
+        flex-direction: column;
+    }
+
+    #header {
+        order: 1;
+    }
+
+    #left_items {
+        order: 2;
+        min-width: max-content;
+    }
+
+    #right_items {
+        order: 3;
+        min-width: max-content;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: .25em;
     }
 }
