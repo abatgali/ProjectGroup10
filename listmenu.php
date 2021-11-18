@@ -12,10 +12,10 @@ require_once('includes/header.php');
 require_once('includes/database.php');
 
 //defining parameters and filter out warnings.
-$all = filter_input(INPUT_POST,'all');
-$app = filter_input(INPUT_POST,'app');
-$ent = filter_input(INPUT_POST,'ent');
-$soup = filter_input(INPUT_POST,'soup');
+$all    = filter_input(INPUT_POST,'all');
+$app    = filter_input(INPUT_POST,'app');
+$ent    = filter_input(INPUT_POST,'ent');
+$soup   = filter_input(INPUT_POST,'soup');
 
 
 //Grabbing post data for all menu items
@@ -83,18 +83,18 @@ if (!$query) {
         <input type="submit" name="Submit" id="Submit" value="Search items">
     </form>
 
-    <div class = "menuItems">
+    <div class="menuItems">
         <h2>Menu Items</h2>
-        <div class = "row header">
+        <div class="row header">
             <div class="col1" style="text-decoration: underline">Product</div>
             <div class="col2" style="text-decoration: underline">Description</div>
             <div class="col3" style="text-decoration: underline">Price</div>
         </div>
 
         <!-- add PHP code here to list all menu items from the "menu" table -->
-        <?php while ($row = $query->fetch_assoc()) { ?>
-            <div class = "row">
-                <div class="col1"><a href = "itemDetails.php?id=<?= $row['Item_id'] ?>"><?= $row['Product_name'] ?></a></div>
+        <?php while ($row = $query -> fetch_assoc()) { ?>
+            <div class="row">
+                <div class="col1"><a href="itemDetails.php?id=<?= $row['Item_id'] ?>"><?= $row['Product_name'] ?></a></div>
                 <div class="col2"><?= $row['Description'] ?></div>
                 <div class="col3">$<?= $row['Price'] ?></div>
             </div>
