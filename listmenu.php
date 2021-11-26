@@ -91,7 +91,7 @@ if (!$query) {
     <br>
     <form action="searchresults.php" method="get">
         <input type="text" name="q" size="40" required>&nbsp;&nbsp;
-        <input type="submit" name="Submit" id="Submit" value="Search items">
+        <input type="submit" name="Submit" id="Submit" value="Search Items">
     </form>
 
     <div class="menuItems">

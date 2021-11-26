@@ -14,28 +14,30 @@ require("includes/header.php");
         <div class="indexTop">
             <h2>Food is our Specialty</h2>
             <p>Our creative, elevated food and beverage program combines satisfying staples with imaginative twists.  From bossy brunches and happy hours to family dinners, special occasions, and everything in between.  Lewie's Chinese Bistro has something for everyone.</p>
-            <input type="button" value="View Menu" onclick="window.location.href='listmenu.php'">
-            <br><br>
-            <input type="button" value="Get your fortune!" onclick="alert('Fortune goes here')">
+            <div class="button">
+                <input type="button" value="View Menu" onclick="window.location.href='listmenu.php'">
+                <br><br>
+                <input type="button" value="Get your Fortune" onclick="alert('Fortune goes here')">
+            </div>
         </div>
         <br>
         <div class="indexMid">
             <h2>Featured Items</h2>
             <div class="featureItems">
                 <div class="feature1">
-                    <img src="images/chow_mein.jpeg" alt="Chow Mein" width="400px" onclick="window.location.href=''">
+                    <img src="images/chow_mein.jpeg" alt="Chow Mein">
                     <p>Chow Mein</p>
                 </div>
                 <div class="feature2">
-                    <img src="images/crab_rangoon.jpg" alt="Crab Rangoon" width="400px">
+                    <img src="images/crab_rangoon.jpg" alt="Crab Rangoon">
                     <p>Crab Rangoon</p>
                 </div>
                 <div class="feature3">
-                    <img src="images/fried_rice.jpg" alt="Fried Rice" width="400px">
+                    <img src="images/fried_rice.jpg" alt="Fried Rice">
                     <p>Fried Rice</p>
                 </div>
                 <div class="feature4">
-                    <img src="images/gen_tso.jpg" alt="General Tso's" width="400px">
+                    <img src="images/gen_tso.jpg" alt="General Tso's">
                     <p>General Tso's Chicken</p>
                 </div>
                 <!--<div class="feature5">

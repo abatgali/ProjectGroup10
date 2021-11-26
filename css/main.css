@@ -8,6 +8,7 @@ body {
     background-image: url("../images/home_1440.jpg");
     background-attachment: fixed;
     background-size: cover;
+    font-family: "Roboto";
 }
 
 .container {
@@ -30,12 +31,13 @@ header {
 /* NAVIGATION */
 nav {
     border: 1px solid black;
-    border-radius: 2em;
-    margin: 1.25em;
-    padding: 0 2.25em 0 1.25em;
+    border-radius: 2em 2em 0 0;
+    margin: 1.25em 1.25em 0.5em 1.25em;
+    padding: 0 2.25em 0.5em 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: rgba(0,0,0,0.35);
 }
 
 nav ul {
@@ -69,7 +71,8 @@ nav a:hover {
 }
 
 #right_items {
-    min-width: 5.5em;
+    min-width: 8em;
+    justify-content: space-around;
 }
 
 /* Home Page */
@@ -79,7 +82,6 @@ nav a:hover {
     border: 1px solid black;
     margin: 1.25em;
     padding: 1.25em;
-    border-radius: 2em;
 }
 
 .indexMid {
@@ -87,7 +89,7 @@ nav a:hover {
     border: 1px solid black;
     margin: 1.25em;
     padding: 1.25em;
-    border-radius: 2em;
+
 }
 
 .indexMid h2 {
@@ -102,9 +104,10 @@ nav a:hover {
     border-radius: 2em;
 }
 
-.feature1 img, .feature2 img, .feature3 img, .feature4 img, .feature5 img, .feature6 img{
+.featureItems img {
     border-radius: 7em;
-    width: 50%;
+    width: 40%;
+    height: auto;
 }
 
 .googleMap {
@@ -142,6 +145,11 @@ nav a:hover {
     border: 1px solid black;
     margin: 1.25em;
     padding: 1.25em;
+}
+
+.leaderPhoto {
+    display: flex;
+    justify-content: space-around;
 }
 
 /*List Menu*/
@@ -235,11 +243,18 @@ footer {
     text-align: center;
     color: white;
     padding: 2em 0 2em 0;
+    border: 1px solid black;
+    border-radius: 0 0 2em 2em;
+    margin: 3em 1.25em 1.25em 1.25em;
+    background-color: rgba(0,0,0,0.35);
+
 }
+
 
 footer p {
     margin: 0;
 }
+
 
 footer a {
     text-decoration: none;
@@ -268,6 +283,7 @@ footer a {
 
     nav {
         flex-direction: column;
+        border-radius: 1.8em;
     }
 
     #header {
@@ -293,4 +309,48 @@ footer a {
     nav ul li {
         margin: .25em;
     }
+
+    .leaderPhoto {
+        flex-direction: column;
+    }
+}
+
+/* styling buttons here
+courtesy of https://fdossena.com/?p=html5cool/buttons/i.frag
+*/
+input[type=button], input[type=submit]{
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    color:#FFFFFF;
+    background-color: #0b173d;
+    text-align:center;
+    transition: all 0.2s;
+    font-size: large;
+}
+input[type=button]:hover, input[type=submit]:hover{
+    color:#000000;
+    background-color: #FFFFFF;
+
+}
+@media all and (max-width:30em){
+    input[type=button], input[type=submit]{
+        display:block;
+        margin:0.4em auto;
+        }
+}
+
+/* changing form input styles */
+form input {
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    font-size: medium;
 }
