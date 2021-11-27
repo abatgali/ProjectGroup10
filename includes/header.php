@@ -30,6 +30,7 @@
                 <h1 id = "header">Lewie's Chinese Bistro</h1>
             <ul id = "right_items">
                 <li><a href="login.php">Login</a></li>
-                <li><a href="cart.php"><img src="../images/cart.png" alt="Cart"></a></li>
+                <li><input alt="cart" id="cart-image" onclick="window.location.href='cart.php'"
+                           src="../images/cart.png" type="image"></li>
             </ul>
         </nav>
