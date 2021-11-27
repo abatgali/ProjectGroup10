@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-    margin: auto;
+    margin: 0.5em auto;
     width: 100%;
     color: white;
 }
@@ -90,6 +90,11 @@ nav a:hover {
     padding: 1.25em;
 }
 
+.indexTop p {
+    width: 80%;
+    margin: auto;
+}
+
 .indexMid {
     color: white;
     border: 1px solid black;
@@ -112,7 +117,7 @@ nav a:hover {
 .featureItems img {
     border-radius: 7em;
     width: auto;
-    height: 120px;
+    height: 150px;
     margin-top: 1.5em;
 }
 
@@ -208,7 +213,8 @@ form {
 
 .menuDetails {
     display: flex;
-    margin: 1.25em;
+    margin: 3em auto;
+    width: 70%;
 }
 
 .menuDetails .col1 {
@@ -267,7 +273,7 @@ footer a {
 
 /* makes nav &
  feature items responsive */
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 880px) {
 
     nav {
         flex-direction: column;
@@ -306,7 +312,7 @@ footer a {
         flex-direction: column;
     }
 
-    .feature1 img, .feature2 img, .feature3 img, .feature4 img, .feature5 img, .feature6 img{
+    .featureItems img{
         width: 70%;
         height: auto;
     }
@@ -341,7 +347,7 @@ input[type=button]:hover, input[type=submit]:hover{
         }
 }
 
-/* changing form input styles */
+/* styles for input fields throughout the website */
 form input {
     display:inline-block;
     padding:0.35em 1.2em;

@@ -25,8 +25,6 @@ if(isset($all)){
             FROM $tblMenu";
 
     $menu_title = "Menu Items";
-
-
 }
 //Grabbing post data for the appetizers
 if(isset($app)){
@@ -72,7 +70,7 @@ if (!$query) {
     exit();
 }
 ?>
-
+    <br><br>
 
     <!--4 Checkboxes for the Filtering Honors Project-->
     <form action="" method="post">
