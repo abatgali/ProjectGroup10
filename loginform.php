@@ -12,6 +12,30 @@ require_once("includes/header.php");
 require_once("includes/database.php");
 
 $message = "Please enter your username and password to login.";
+
+$login_status = '';
+
+//retrieve session variable
+if(isset($_SESSION['login_status'])){
+    $login_status = $_SESSION['login_status'];
+}
+if($login_status == 1){
+    echo "<p>You are logged in as ". $_SESSION['login'] . ".</p>";
+    echo "<a href='logout.php'>Log out</a><br />";
+    include ('includes/footer.php');
+    exit();
+}
+//the user's last login attempt failed
+if($login_status == 2) {
+    $message = "Username or password invalid. Please try again.";
+}
+//the user has just registered
+if ($login_status == 3) {
+    echo "<p>Thank you for registering with us. Your account has been created.</p>";
+    echo "<a href='logout.php'>Log out</a><br />";
+    include ('includes/footer.php');
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

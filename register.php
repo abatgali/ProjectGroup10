@@ -27,7 +27,7 @@ $password = $conn->real_escape_string(trim(filter_input(INPUT_POST, 'password', 
 $role = 2;  //regular user
 
 //insert statement. The id field is an auto field.
-$sql = "INSERT INTO users VALUES (NULL, '$firstname', '$lastname','$email','$username', '$password', '$role')";
+$sql = "INSERT INTO users VALUES (NULL, '$firstname', '$lastname','$email','$password', '$username', '$role')";
 
 //execut the insert query
 $query = @$conn->query($sql);
