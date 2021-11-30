@@ -25,8 +25,8 @@ $message = "Please enter your username and password to login.";
                     <td colspan="2"><?php echo $message; ?><br><br></td>
                 </tr>
                 <tr>
-                    <td style="width: 80px">User name: </td>
-                    <td><input type='text' name='username' required></td>
+                    <td style="width: 80px">Email: </td>
+                    <td><input type='email' name='email' required></td>
                 </tr>
                 <tr>
                     <td>Password: </td>
@@ -57,8 +57,8 @@ $message = "Please enter your username and password to login.";
                     <td><input name="lastname" type="text" required></td>
                 </tr>
                 <tr>
-                    <td>User Name: </td>
-                    <td><input name="username" type="text" required></td>
+                    <td>Email: </td>
+                    <td><input name="email" type="email" required></td>
                 </tr>
                 <tr>
                     <td>Password:</td>
