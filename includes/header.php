@@ -5,6 +5,23 @@
  *File: header.php
  *Description:
  */
+
+//Start a new session
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+//Create Three variables for login, username and role
+$login = '';
+$name = '';
+$role = 0;
+//if the use has logged in, retrieve login, name, and role.
+if (isset($_SESSION['login']) AND isset($_SESSION['name']) AND
+    isset($_SESSION['role'])) {
+    $login = $_SESSION['login'];
+    $name = $_SESSION['name'];
+    $role = $_SESSION['role'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +46,17 @@
             </ul>
                 <h1 id = "header">Lewie's Chinese Bistro</h1>
             <ul id = "right_items">
-                <li><a href="login.php">Login</a></li>
-                <li><a href="cart.php"><img src="../images/cart.png" alt="Cart"></a></li>
+                <?php
+                if(empty($login)){
+                    echo "<a href='loginform.php'>Login</a>";
+                }
+                else{
+                    echo "<a href='logout.php'>Logout</a>";
+                    echo "<span style='color:red; margin-right: 30px'Welcome $username!</span>";
+                }
+
+                ?>
+                <li><input alt="cart" id="cart-image" onclick="window.location.href='cart.php'"
+                           src="../images/cart.png" type="image"></li>
             </ul>
         </nav>
