@@ -32,11 +32,11 @@ require("includes/header.php");
                     <p>Crab Rangoon</p>
                 </div>
                 <div class="feature3">
-                    <a href="itemDetails.php?id=12"><img src="images/fried_rice.jpg" alt="Fried Rice"></a>
+                    <a href="itemDetails.php?id=20"><img src="images/fried_rice.jpg" alt="Fried Rice"></a>
                     <p>Fried Rice</p>
                 </div>
                 <div class="feature4">
-                    <a href="itemDetails.php?id=12"><img src="images/General-chic.jpg" alt="General Tso's"></a>
+                    <a href="itemDetails.php?id=21"><img src="images/General-chic.jpg" alt="General Tso's"></a>
                     <p>General Tso's Chicken</p>
                 </div>
                 <!--<div class="feature5">

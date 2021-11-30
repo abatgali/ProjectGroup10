@@ -19,6 +19,7 @@ $database       = "entrees_louies"; //database name.....
 
 $tblCategory    = "categories"; //categories table
 $tblMenu        = "menu_items";   //menu_items table
+$tblFortune     = "fortunes"; //fortunes table
 
 
 //connecting to MySQL server
