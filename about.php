@@ -5,19 +5,12 @@
  *File:         about.php
  *Description:  About us page
 */
-?>
 
-<?php
 $title = "About Us";
+
+require("includes/header.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-    <?php
-    require("includes/header.php");
-    ?>
-    <body>
-        <div class="container">
             <div class="aboutTop">
                 <h2>About Us</h2>
                 <p>Been in business for over 10 years and...</p>
@@ -46,26 +39,24 @@ $title = "About Us";
                 <p>Insert some fancy words here or something.</p>
                 <div class="leaderPhoto">
                     <div class="leader1">
-                        <img src="" alt="Leader photo">
+                        <img src="images/AdobeStock_65772719.svg" alt="Leader photo">
                         <p>James Ritter</p>
                     </div>
                     <div class="leader2">
-                        <img src="" alt="Leader photo">
+                        <img src="images/AdobeStock_65772719.svg" alt="Leader photo">
                         <p>Isaac Lowe</p>
                     </div>
                     <div class="leader3">
-                        <img src="" alt="Leader photo">
+                        <img src="images/AdobeStock_65772719.svg" alt="Leader photo">
                         <p>Anant Batgali</p>
                     </div>
                     <div class="leader4">
-                        <img src="" alt="Leader photo">
+                        <img src="images/AdobeStock_65772719.svg" alt="Leader photo">
                         <p>Alex Weber</p>
                     </div>
                 </div>
             </div>
-            <?php
-            require("includes/footer.php");
-            ?>
-        </div>
-    </body>
-</html>
+
+<?php
+require("includes/footer.php");
+?>

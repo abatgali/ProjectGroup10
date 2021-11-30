@@ -25,8 +25,6 @@ if(isset($all)){
             FROM $tblMenu";
 
     $menu_title = "Menu Items";
-
-
 }
 //Grabbing post data for the appetizers
 if(isset($app)){
@@ -72,7 +70,7 @@ if (!$query) {
     exit();
 }
 ?>
-
+    <br><br>
 
     <!--4 Checkboxes for the Filtering Honors Project-->
     <form action="" method="post">
@@ -91,7 +89,7 @@ if (!$query) {
     <br>
     <form action="searchresults.php" method="get">
         <input type="text" name="q" size="40" required>&nbsp;&nbsp;
-        <input type="submit" name="Submit" id="Submit" value="Search items">
+        <input type="submit" name="Submit" id="Submit" value="Search Items">
     </form>
 
     <div class="menuItems">

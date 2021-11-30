@@ -48,7 +48,6 @@ if (!$row) {
 }
 ?>
 <div class="container">
-    <h2>Our Menu Items</h2>
     <div class="menuDetails">
         <div class="label">
             <!-- display item attributes  -->
