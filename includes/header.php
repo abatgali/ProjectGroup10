@@ -6,6 +6,10 @@
  *Description:
  */
 
+//Start a new session
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 //Create Three variables for login, username and role
 $login = '';
@@ -42,7 +46,16 @@ if (isset($_SESSION['login']) AND isset($_SESSION['name']) AND
             </ul>
                 <h1 id = "header">Lewie's Chinese Bistro</h1>
             <ul id = "right_items">
-                <li><a href="login.php">Login</a></li>
+                <?php
+                if(empty($login)){
+                    echo "<a href='loginform.php'>Login</a>";
+                }
+                else{
+                    echo "<a href='logout.php'>Logout</a>";
+                    echo "<span style='color:red; margin-right: 30px'Welcome $username!</span>";
+                }
+
+                ?>
                 <li><input alt="cart" id="cart-image" onclick="window.location.href='cart.php'"
                            src="../images/cart.png" type="image"></li>
             </ul>

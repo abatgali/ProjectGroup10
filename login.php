@@ -42,4 +42,4 @@ if ($query->num_rows) {
 $conn->close();
 
 //redirect to the loginform.php page
-header("Location: loginform.php");
+header("Location: index.php");
