@@ -157,6 +157,11 @@ nav a:hover {
     justify-content: space-around;
 }
 
+.leaderPictures {
+    height: 250px;
+    length: 250px;
+}
+
 /*List Menu*/
 .menuItems {
     display: flex;

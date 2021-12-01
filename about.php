@@ -18,8 +18,8 @@ require("includes/header.php");
             <br>
             <div class="aboutMid">
                 <article>
-                    <h3>Our Mission</h3>
-                    <p>Insert some fancy wording here that represents our mission.</p>
+                    <h2>Our Mission</h2>
+                    <h3>Here at Louie's, we are dedicated to an authentic recreation of the chinese cuisine. Every day at Louie's we dedicate ourselves to maximizing</h3>
                 </article>
                 <aside>
                     <div class="aboutMidPic1">
@@ -38,20 +38,20 @@ require("includes/header.php");
                 <h2>Meet Our Leaders</h2>
                 <p>Insert some fancy words here or something.</p>
                 <div class="leaderPhoto">
-                    <div class="leader1">
-                        <img src="images/AdobeStock_65772719.svg" alt="Leader photo">
-                        <p>James Ritter</p>
-                    </div>
-                    <div class="leader2">
-                        <img src="images/AdobeStock_65772719.svg" alt="Leader photo">
+                    <div class="leader">
+                        <img class="leaderPictures" src="images/red%20ranger.jpg" alt="Leader photo">
                         <p>Isaac Lowe</p>
                     </div>
+                    <div class="leader2">
+                        <img class="leaderPictures" src="images/blue%20ranger.jpg" alt="Leader photo">
+                        <p>James Ritter</p>
+                    </div>
                     <div class="leader3">
-                        <img src="images/AdobeStock_65772719.svg" alt="Leader photo">
+                        <img class="leaderPictures" src="images/green%20ranger.jpeg " alt="Leader photo">
                         <p>Anant Batgali</p>
                     </div>
                     <div class="leader4">
-                        <img src="images/AdobeStock_65772719.svg" alt="Leader photo">
+                        <img class="leaderPictures" src="images/pink%20ranger.jpg" alt="Leader photo">
                         <p>Alex Weber</p>
                     </div>
                 </div>
