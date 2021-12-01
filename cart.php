@@ -10,15 +10,8 @@
 $title = "Shopping Cart";
 require_once ("includes/header.php");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+
+
 <?php
 
-?>
-</body>
-</html>
+require_once 'includes/footer.php';

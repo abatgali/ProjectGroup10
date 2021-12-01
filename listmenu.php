@@ -91,13 +91,14 @@ if (!$query) {
         <input type="text" name="q" size="40" required>&nbsp;&nbsp;
         <input type="submit" name="Submit" id="Submit" value="Search Items">
     </form>
-
+    <br>
     <div class="menuItems">
         <h2><?php echo $menu_title ?></h2>
         <div class="row header">
             <div class="col1" style="text-decoration: underline">Product</div>
             <div class="col2" style="text-decoration: underline">Description</div>
             <div class="col3" style="text-decoration: underline">Price</div>
+            <div style="text-decoration: underline">Add to Cart</div>
         </div>
 
         <!-- add PHP code here to list all menu items from the "menu" table -->
@@ -106,6 +107,11 @@ if (!$query) {
                 <div class="col1"><a href="itemDetails.php?id=<?= $row['Item_id'] ?>"><?= $row['Product_name'] ?></a></div>
                 <div class="col2"><?= $row['Description'] ?></div>
                 <div class="col3">$<?= $row['Price'] ?></div>
+                <div>
+                    <a href="addtocart.php?id=<?= $row['Item_id'] ?>">
+                        <img src="images/plustocart.png" alt="click to add item to cart">
+                    </a>
+                </div>
             </div>
         <?php } ?>
     </div>

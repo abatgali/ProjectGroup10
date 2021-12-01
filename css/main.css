@@ -9,11 +9,6 @@ body {
     background-attachment: fixed;
     background-size: cover;
     font-family: "Roboto", serif;
-}
-
-.container {
-    margin: 0.5em auto;
-    width: 100%;
     color: white;
 }
 
@@ -24,7 +19,6 @@ body {
 
 header {
     text-align: center;
-    color: white;
     font-weight: bold;
 }
 
@@ -161,9 +155,12 @@ nav a:hover {
 .menuItems {
     display: flex;
     flex-direction: column;
-    margin: 1.25em;
+    width: max-content;
+    margin: auto;
 }
-
+.menuItems h2 {
+    text-align: center;
+}
 /*Item Details*/
 .row a{
     color: white;
