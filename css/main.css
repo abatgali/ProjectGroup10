@@ -311,6 +311,10 @@ footer a {
     .menuItems .col2 {
         display: none;
     }
+
+    #clear {
+        display: none;
+    }
 }
 
 /* button styling
@@ -351,4 +355,31 @@ form input {
     border-radius:0.12em;
     box-sizing: border-box;
     font-size: medium;
+}
+
+.choices {
+    width: 50%;
+    align-self: center;
+    margin-top: 1.25em;
+    display: flex;
+    justify-content: space-between;
+}
+
+#empty {
+    display: block;
+    margin: auto;
+}
+
+/* styles for bubble displaying no. of items in cart */
+#cartItemCounter {
+    height: 20px;
+    width: 20px;
+    border-radius: 45%;
+    background-color: #FFDD5EFF;
+    text-align: center;
+    font-size: small;
+    font-weight: bold;
+    padding-left: 0;
+    color: #2C3840;
+    display: inline-block;
 }

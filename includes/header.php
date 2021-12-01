@@ -62,7 +62,23 @@ if (isset($_SESSION['login']) AND isset($_SESSION['name']) AND
                 <li>
                     <input alt="cart" id="cart-image" onclick="window.location.href='cart.php'"
                            src="images/icon-cart.png" type="image">
-                    <div id="cartItemCounter"></div>
+
+                <?php
+                // calculating total no. of items in the order
+                if (isset($_SESSION['order'])) {
+                    $order = $_SESSION['order'];
+                    $count = 0;
+                    foreach (array_keys($order) as $id) {
+                        $count += $order[$id];
+                    }
+                ?>
+                    <div id="cartItemCounter">
+                        <?= $count; ?>
+                    </div>
+                <?php
+                // closing if statement
+                }
+                ?>
                 </li>
             </ul>
         </nav>
