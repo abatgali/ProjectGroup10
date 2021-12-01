@@ -36,8 +36,6 @@ if (isset($_SESSION['login']) AND isset($_SESSION['name']) AND
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
-
-
     </head>
     <body>
     <div class="container">
@@ -49,20 +47,9 @@ if (isset($_SESSION['login']) AND isset($_SESSION['name']) AND
             </ul>
             <h1 id = "header">Lewie's Chinese Bistro</h1>
             <ul id = "right_items">
-                <?php
-                if(empty($login)){
-                    echo "<a href='loginform.php'><img src='images/user_icon.png' alt='Login'></a>";
-                }
-                else{
-                    echo "<a href='logout.php'>Logout</a>";
-                    echo "<span style='color:red; margin-right: 30px'Welcome $username!</span>";
-                }
-
-                ?>
                 <li>
                     <input alt="cart" id="cart-image" onclick="window.location.href='cart.php'"
                            src="images/icon-cart.png" type="image">
-
                 <?php
                 // calculating total no. of items in the order
                 if (isset($_SESSION['order'])) {
@@ -79,6 +66,9 @@ if (isset($_SESSION['login']) AND isset($_SESSION['name']) AND
                 // closing if statement
                 }
                 ?>
+                </li>
+                <li>
+                   <a href='loginform.php'><img src='images/user_icon.png' alt='Login'></a>
                 </li>
             </ul>
         </nav>

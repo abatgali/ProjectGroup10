@@ -17,12 +17,9 @@ session_start();
 
 // tell user cart is empty if no items selected
 if (!isset($_SESSION['order']) || !$_SESSION['order']) {
-    echo "<div class='indexTop'><h3>Looks empty in here, try picking items from the menu first.</h3></div>";
+    echo "<br><div class='indexTop'><h2>Cart</h2><br><br><h3>Looks empty in here, try picking items from the menu first.</h3>";
     ?>
-    <div class="menuItems">
-        <div class="choices">
-            <input id="empty" type="button" value="Return to Menu" onclick="window.location.href = 'listmenu.php'">
-        </div>
+        <input id="return" type="button" value="Return to Menu" onclick="window.location.href = 'listmenu.php'">
     </div>
     <?php
     require_once 'includes/footer.php';
