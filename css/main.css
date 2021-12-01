@@ -8,26 +8,29 @@ body {
     background-image: url("../images/home_1440.jpg");
     background-attachment: fixed;
     background-size: cover;
-    font-family: "Roboto", serif;
+    font-family: "lato", sans-serif;
+    font-size: large;
     color: white;
+    margin: 0;
 }
 
+h1, h2, h3 {
+    font-family: "lato", sans-serif;
+    font-weight: bold;
+}
 .container h3 {
-    margin: 1.25em;
+    margin: auto;
     text-align: center;
 }
 
 header {
     text-align: center;
-    font-weight: bold;
 }
 
 /* NAVIGATION */
 nav {
-    border: 1px solid black;
-    border-radius: 2em 2em 0 0;
-    margin: 1.25em 1.25em 0.5em 1.25em;
-    padding: 0 2.25em 0.5em 1em;
+    /*margin: 1.25em 1.25em 0.5em 1.25em;*/
+    padding: 0 4rem 0 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,11 +51,7 @@ nav a {
     font-weight: bold;
 }
 
-nav a:link {
-    color: red;
-}
-
-nav a:visited {
+nav a:link, a:visited {
     color: darkorange;
 }
 
@@ -65,15 +64,15 @@ nav a:hover {
 }
 
 #right_items {
-    min-width: 8em;
+    min-width: 6em;
     justify-content: space-around;
 }
 
 /* Home Page */
 .indexTop {
-    color: white;
     text-align: center;
-    border: 1px solid black;
+    /*border: 1px solid black;
+    color: white;*/
     margin: 1.25em;
     padding: 1.25em;
 }
@@ -84,11 +83,10 @@ nav a:hover {
 }
 
 .indexMid {
-    color: white;
-    border: 1px solid black;
+    /*border: 1px solid black;
+    color: white;*/
     margin: 1.25em;
     padding: 1.25em;
-
 }
 
 .indexMid h2 {
@@ -97,6 +95,7 @@ nav a:hover {
 
 .featureItems {
     text-align: center;
+
     margin: 1.25em;
     display: flex;
     justify-content: space-evenly;
@@ -118,13 +117,11 @@ nav a:hover {
 /* About Us Page*/
 .aboutTop {
     text-align: center;
-    border: 1px solid black;
     margin: 1.25em;
     padding: 1.25em;
 }
 
 .aboutMid {
-    border: 1px solid black;
     margin: 1.25em;
     padding: 1.25em;
 }
@@ -141,7 +138,6 @@ nav a:hover {
 
 .aboutBottom {
     text-align: center;
-    border: 1px solid black;
     margin: 1.25em;
     padding: 1.25em;
 }
@@ -185,14 +181,21 @@ nav a:hover {
 }
 
 .menuItems .header {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
     font-weight: bold;
 }
 
-.menuItems .col1, .menuItems .col2, .menuItems .col3 {
-    width: 300px;
+.menuItems .col1{
+    width: 200px;
 }
+
+.menuItems .col2 {
+    width: 450px;
+    padding:0 5rem;
+}
+
+.menuItems .col3, .col4 {
+    width: 8rem;
+  }
 
 /* styles of the book details table */
 form {
@@ -244,11 +247,9 @@ form {
 /* FOOTER */
 footer {
     text-align: center;
-    color: white;
+    /*color: white;*/
     padding: 2em 0 2em 0;
-    border: 1px solid black;
-    border-radius: 0 0 2em 2em;
-    margin: 3em 1.25em 1.25em 1.25em;
+    margin-top: 3em;
     background-color: rgba(0,0,0,0.35);
 }
 
@@ -268,7 +269,6 @@ footer a {
 
     nav {
         flex-direction: column;
-        border-radius: 1.8em;
     }
 
     #header {
@@ -306,6 +306,10 @@ footer a {
     .featureItems img{
         width: 70%;
         height: auto;
+    }
+
+    .menuItems .col2 {
+        display: none;
     }
 }
 

@@ -9,6 +9,8 @@
 $title = "Lewie's Chinese Bistro";
 
 require("includes/header.php");
+include 'includes/fortune_teller.php';
+
 ?>
         <br>
         <div class="indexTop">
@@ -17,9 +19,14 @@ require("includes/header.php");
             <br>
             <input type="button" value="View Menu" onclick="window.location.href='listmenu.php'">
             <br><br>
-            <input type="button" value="Get your Fortune" onclick="alert('Fortune goes here')">
+            <input type="button" value="Get your Fortune"
+                   onclick="alert('<?php
+                   // to display fortune
+                   echo tellFortune($conn);
+                   // to get new fortune each time button is clicked
+                   header("Refresh: 60")
+                   ?>')">
         </div>
-        <br>
         <div class="indexMid">
             <h2>Featured Items</h2>
             <div class="featureItems">

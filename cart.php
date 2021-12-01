@@ -7,7 +7,7 @@
  **/
 ?>
 <?php
-$title = "Shopping Cart";
+$title = "Order Cart";
 require_once ("includes/header.php");
 ?>
 
