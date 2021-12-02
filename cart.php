@@ -1,4 +1,4 @@
-<?php
+ <?php
 /**
  * Author: James Ritter
  * Date: $(DATE)

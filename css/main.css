@@ -118,6 +118,12 @@ nav a:hover {
 }
 
 /* About Us Page*/
+.aboutUs {
+    font-size: 40px;
+}
+.aboutTitle{
+    font-size: 50px;
+}
 .aboutTop {
     text-align: center;
     margin: 1.25em;
@@ -125,18 +131,49 @@ nav a:hover {
 }
 
 .aboutMid {
+    text-align: center;
     margin: 1.25em;
     padding: 1.25em;
+
 }
 
 .aboutMid article {
-    text-align: left;
+    text-align: center;
     padding: 1.25em;
 }
 
 .aboutMid aside {
     text-align: right;
     padding: 1.25em;
+}
+
+.aboutMidPics{
+    text-align:center;
+
+}
+
+#aboutMidPic1{
+    display:inline-block;
+    height: 250px;
+    width: 350px;
+
+}
+
+#aboutMidPic2{
+    display:inline-block;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 250px;
+    width: 350px;
+
+}
+
+#aboutMidPic3{
+    display:inline-block;
+    height: 250px;
+    width: 350px;
+    width: 350px;
+
 }
 
 .aboutBottom {
@@ -152,7 +189,7 @@ nav a:hover {
 
 .leaderPictures {
     height: 250px;
-    length: 250px;
+    width: 240px;
 }
 
 /*List Menu*/
