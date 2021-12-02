@@ -46,10 +46,8 @@ if ($login_status == 3) {
     <!-- display the login form -->
     <div class="loginOld">
         <form method='post' action='login.php'>
+            <h2>Existing Customer</h2>
             <table>
-                <tr>
-                    <td colspan="2"><h2>Login</h2><br><br></td>
-                </tr>
                 <tr>
                     <td style="width: 80px">Email: </td>
                     <td><input type='email' name='email' required></td>
@@ -70,10 +68,8 @@ if ($login_status == 3) {
     <!-- display the registration form -->
     <div class="loginNew">
         <form action="register.php" method="post">
+            <h2>New Customers</h2>
             <table>
-                <tr>
-                    <td colspan="2" align="left"><h2>Register</h2><br><br></td>
-                </tr>
                 <tr>
                     <td style="width: 85px">First Name: </td>
                     <td><input name="firstname" type="text" required></td>
