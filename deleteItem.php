@@ -5,6 +5,8 @@
  * File : deleteItem.php
  * Description:
  */
+
+$title = "Delete Item Item Details";
 require_once('includes/header.php');
 require_once('includes/database.php');
 $Item_id = filter_input(INPUT_GET, "Item_id", FILTER_SANITIZE_NUMBER_INT);

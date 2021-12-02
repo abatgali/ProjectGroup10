@@ -5,7 +5,10 @@
  * File : addItem.php
  * Description:
  */
+
+$title = "Add Item Page";
 require_once 'includes/header.php';
+
 ?>
 
     <h2 class="aboutTop">Add a New Menu Item</h2>

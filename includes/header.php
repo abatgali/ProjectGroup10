@@ -10,7 +10,6 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-
 //Create Three variables for login, username and role
 $login = '';
 $name = '';

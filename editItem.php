@@ -5,7 +5,7 @@
  * File : editItem.php
  * Description:
  */
-$page_title = "Item Details Edit page";
+$title = "Item Details Edit page";
 require_once ('includes/header.php');
 require_once('includes/database.php');
 
