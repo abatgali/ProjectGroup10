@@ -63,11 +63,11 @@ nav a:hover {
 }
 
 #left_items {
-    min-width: 10em;
+    min-width: 18em;
 }
 
 #right_items {
-    min-width: 6em;
+    min-width: 15em;
     justify-content: space-around;
 }
 
@@ -390,12 +390,7 @@ input[type=button]:hover, input[type=submit]:hover{
         }
 }
 
-.buttons {
-    border-top: 1px solid #CCCCCC;
-    margin: 50px auto 20px auto;
-    padding-top: 10px;
-    text-align: center;
-}
+
 
 /* styles for input fields throughout the website */
 form input {

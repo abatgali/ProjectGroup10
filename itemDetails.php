@@ -73,12 +73,12 @@ if (isset($_SESSION['role'])) {
     </div>
     <?php
     $confirm = "";
-    if(isset($_GET['m'])) {
-        if ($_GET['m'] == "insert") {
-            $confirm = "You have successfully added the new book.";
+    if(isset($_GET['w'])) {
+        if ($_GET['w'] == "insert") {
+            $confirm = "You have successfully added the new item.";
         }
-        else if ($_GET['m'] == "update") {
-            $confirm = "Your book has been successfully updated.";
+        else if ($_GET['w'] == "updateItem") {
+            $confirm = "Your item has been successfully updated.";
         }
     }
     //display the following buttons only if the user's role is 1.
@@ -91,16 +91,17 @@ if (isset($_SESSION['role'])) {
                value="Edit">
         <input type="button" value="Delete"
                onclick="window.location.href='deleteItem.php?id=<?= $id ?>'">
-        <input type="button"
-               onclick="window.location.href='listMenu.php'"
-               value="Cancel">
         <?php
-    }
-    ?>
+        }
+        ?>
         <div>
+
             <input type="button"
-                   onclick="window.location.href='addtocart.php'"
+                   onclick="window.location.href='addtocart.php?id=<?= $id ?>'"
                    value="Add To Cart">
+            <input type="button"
+                   onclick="window.location.href='listMenu.php'"
+                   value="Back to Menu">
         </div>
 
     </div>
