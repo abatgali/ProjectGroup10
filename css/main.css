@@ -62,11 +62,11 @@ nav a:hover {
 }
 
 #left_items {
-    min-width: 10em;
+    min-width: 18em;
 }
 
 #right_items {
-    min-width: 6em;
+    min-width: 15em;
     justify-content: space-around;
 }
 
@@ -389,6 +389,8 @@ input[type=button]:hover, input[type=submit]:hover{
         margin:0.4em auto;
         }
 }
+
+
 
 /* styles for input fields throughout the website */
 form input {

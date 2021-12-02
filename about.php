@@ -13,7 +13,7 @@ require("includes/header.php");
 
             <div class="aboutTop">
                 <h2 class="aboutTitle">About Us</h2>
-                <p class="aboutUs">Louie's has been in the American Chinese business for 10 years, and it takes quite a crew to continuously maintain the title of #1 American Chinese food hotpot. But its because of our crew, our leadership, and most importantly our loyal customers that we can continue to maintain our position as America's favorite Chinese location! </p>
+                <p class="aboutUs">Louie's has been in the American Chinese business for 20 years, and it takes quite a crew to continuously maintain the title of #1 American Chinese food hotpot. But its because of our crew, our leadership, and most importantly our loyal customers that we can continue to maintain our position as America's favorite Chinese location! </p>
             </div>
             <br>
             <div class="aboutMid">

@@ -10,7 +10,6 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-
 //Create Three variables for login, username and role
 $login = '';
 $name = '';
@@ -44,6 +43,14 @@ if (isset($_SESSION['login']) AND isset($_SESSION['name']) AND
                 <li><a href="index.php">Home</a></li>
                 <li><a href="listmenu.php">Menu</a></li>
                 <li><a href="about.php">About</a></li>
+                <?php
+                //display the following buttons only if the user's role is 1.
+                if ($role == 1) {
+                ?>
+                <li><a href="addItem.php">AddItem</a></li>
+                    <?php
+                }
+                ?>
             </ul>
             <h1 id = "header">Lewie's Chinese Bistro</h1>
             <ul id = "right_items">
