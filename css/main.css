@@ -6,8 +6,6 @@
 
 body {
     background-image: url("../images/home_1440.jpg");
-    background-color: #000000;
-    opacity: 0.8;
     background-attachment: fixed;
     background-size: cover;
     font-family: "lato", sans-serif;
@@ -15,6 +13,7 @@ body {
     color: #cec4ba;
     margin: 0;
 }
+
 
 h1, h2, h3 {
     font-family: "lato", sans-serif;
@@ -313,6 +312,7 @@ footer a {
 
     nav {
         flex-direction: column;
+        margin: auto;
     }
 
     #header {
@@ -426,4 +426,28 @@ form input {
     padding-left: 0;
     color: #2C3840;
     display: inline-block;
+}
+
+.total {
+    margin-left: auto;
+    margin-right: 4em;
+    text-align: right;
+}
+
+#message {
+    width: max-content;
+    margin: auto;
+    padding: 3em;
+    text-align: center;
+}
+
+#message img {
+    opacity: 0.5;
+    border-radius: 50%;
+    padding: 3em;
+}
+
+#empty_img {
+    opacity: 0.75;
+
 }
