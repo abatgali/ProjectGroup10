@@ -20,10 +20,12 @@ $page_title = 'checkout';
 //display the header
 require_once ('includes/header.php');
 ?>
-<div class="aboutMid">
-    <h1>Checkout</h1>
-    <h2>Thank you for placing an online order with Louie's, we'll notify you via email as soon as your food is ready for pickup!</h2>
-</div>
+    <div id="message">
+        <h2>Confirmation</h2>
+        <h3>Order Placed</h3>
+        <img src="https://img.icons8.com/ios-filled/100/000000/clock--v2.gif"/>
+        <h3>Will be ready in 20 minutes.</h3>
+    </div>
 <?php
 include ('includes/footer.php');
 ?>
