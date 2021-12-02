@@ -46,6 +46,15 @@ if (!$row) {
     header("Location: error.php?m=$error");
     die();
 }
+//start session if it has not already started
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+//if the user has logged in, retrieve the user's role.
+$role = 0;
+if (isset($_SESSION['role'])) {
+    $role = $_SESSION['role'];
+}
 ?>
 <div class="container">
     <div class="menuDetails">
@@ -60,10 +69,42 @@ if (!$row) {
             <div class="col1"><?= $row['Product_name'] ?></div>
             <div class="col2">$<?= $row['Price'] ?></div>
             <div class="col3"><?= $row['Description'] ?></div>
-        </div>
+        </div
     </div>
+    <?php
+    $confirm = "";
+    if(isset($_GET['m'])) {
+        if ($_GET['m'] == "insert") {
+            $confirm = "You have successfully added the new book.";
+        }
+        else if ($_GET['m'] == "update") {
+            $confirm = "Your book has been successfully updated.";
+        }
+    }
+    //display the following buttons only if the user's role is 1.
+    if ($role == 1) {
+    ?>
     <br><br>
+    <div class="buttons">
+        <input type="button"
+               onclick="window.location.href='editItem.php?id=<?= $id ?>'"
+               value="Edit">
+        <input type="button" value="Delete"
+               onclick="window.location.href='deleteItem.php?id=<?= $id ?>'">
+        <input type="button"
+               onclick="window.location.href='listMenu.php'"
+               value="Cancel">
+        <?php
+    }
+    ?>
+        <div>
+            <input type="button"
+                   onclick="window.location.href='addtocart.php'"
+                   value="Add To Cart">
+        </div>
+
+    </div>
+</div>
     <?php
     require_once('includes/footer.php');
     ?>
-</div>
