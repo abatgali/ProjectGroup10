@@ -67,6 +67,7 @@ if (isset($_SESSION['login']) AND isset($_SESSION['name']) AND
                 }
                 ?>
                 </li>
+                // user profile icon
                 <li>
                    <a href='loginform.php'><img src='images/user_icon.png' alt='Login'></a>
                 </li>
