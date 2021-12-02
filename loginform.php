@@ -1,26 +1,27 @@
 <?php
 /**
- * Author: James Ritter
+ * Author: James Ritter, Alex Weber
  * Date: $(DATE)
  * File: $(FILE_NAME)
- * Description:
+ * Description: Login and Register forms
  **/
 ?>
 <?php
 $title = "Login Page";
 require_once("includes/header.php");
-require_once("includes/database.php");
+?>
+<h2>Login or Register</h2>
+<?php
+$message = "Please enter your email and password to login.";
 
-$message = "Please enter your username and password to login.";
-
-$login_status = '';
+$login_status = ' ';
 
 //retrieve session variable
 if(isset($_SESSION['login_status'])){
     $login_status = $_SESSION['login_status'];
 }
 if($login_status == 1){
-    echo "<p>You are logged in as ". $_SESSION['login'] . ".</p>";
+    echo "<p>You are logged in as ". $_SESSION['name'] . ".</p>";
     echo "<a href='logout.php'>Log out</a><br />";
     include ('includes/footer.php');
     exit();
