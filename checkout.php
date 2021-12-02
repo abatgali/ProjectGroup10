@@ -6,19 +6,21 @@
  * Description:
  */
 
+
+
 if (session_status() == PHP_SESSION_NONE) {
 session_start();
 }
 if (!isset($_SESSION['login'])) {
-header("Location: loginform.php");
-exit();
+    header("Location: loginform.php");
+    exit();
 }
 //empty the shopping cart
 $_SESSION['order'] = array();
-//set page title
-$page_title = 'checkout';
+//displays the title
+$title = 'Check Out';
 //display the header
-require_once ('includes/header.php');
+require_once('includes/header.php');
 ?>
     <div id="message">
         <h2>Confirmation</h2>
