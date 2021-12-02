@@ -10,9 +10,12 @@
 $title = "Login Page";
 require_once("includes/header.php");
 ?>
-<h2>Login or Register</h2>
+<div class="loginHeading">
+    <h2>Login or Register</h2>
+</div>
+
 <?php
-$message = "Please enter your email and password to login.";
+$message = "Existing Customer";
 
 $login_status = ' ';
 
@@ -43,7 +46,7 @@ if ($login_status == 3) {
     <body>
 <div class="login-container">
     <!-- display the login form -->
-    <div class="login">
+    <div class="loginOld">
         <form method='post' action='login.php'>
             <table>
                 <tr>
@@ -67,7 +70,7 @@ if ($login_status == 3) {
         </form>
     </div>
     <!-- display the registration form -->
-    <div class="">
+    <div class="loginNew">
         <form action="register.php" method="post">
             <table>
                 <tr>

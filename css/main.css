@@ -78,6 +78,7 @@ nav a:hover {
     color: white;*/
     margin: 1.25em;
     padding: 1.25em;
+    background-color: rgba(0,0,0,0.35);
 }
 
 .indexTop p {
@@ -293,6 +294,21 @@ form {
     width: auto;
 }
 
+.loginHeading {
+    text-align: center;
+}
+
+.login-container {
+    display: flex;
+}
+
+.loginOld, .loginNew {
+    margin: 10px;
+}
+
+td.choices {
+    float: right;
+}
 
 /* FOOTER */
 footer {
@@ -365,6 +381,10 @@ footer a {
 
     #clear {
         display: none;
+    }
+
+    .login-container {
+        flex-direction: column;
     }
 }
 
