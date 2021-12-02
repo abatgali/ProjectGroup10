@@ -17,7 +17,8 @@ session_start();
 
 // tell user cart is empty if no items selected
 if (!isset($_SESSION['order']) || !$_SESSION['order']) {
-    echo "<br><div class='indexTop'><h2>Cart</h2><br><br><h3>Looks empty in here, try picking items from the menu first.</h3>";
+    echo "<br><div class='indexTop'><h2>Cart</h2><br>
+        <img id=\"empty_img\" src='images/empty.png' alt='nothing in cart'><br><br><br><h3>Looks empty in here, try picking items from the menu first.</h3>";
     ?>
         <input id="return" type="button" value="Return to Menu" onclick="window.location.href = 'listmenu.php'">
     </div>
@@ -51,6 +52,10 @@ foreach (array_keys($order) as $id) {
 // execute the query
 $results = $conn->query($sql);
 
+
+// variable to calculate total amount
+$total = 0;
+
 // fetch order items
 while ($row = $results -> fetch_assoc()) {
     $id = $row['Item_id'];
@@ -58,7 +63,7 @@ while ($row = $results -> fetch_assoc()) {
     $price = $row['Price'];
     $qty = $order[$id];
     $subtotal = $qty * $price;
-
+    $total += $subtotal;
 ?>
     <div class="row">
         <div class="col1"><a href="itemDetails.php?id=<?= $id ?>"><?= $item ?></a></div>
@@ -69,7 +74,15 @@ while ($row = $results -> fetch_assoc()) {
 <?php
 // closing the while loop
 }
+
+$tax = 0.07 * $total;
+$total = $total + $tax;
+
 ?>
+    <div class="total">
+        <h4>Taxes (7%) = <?php printf("$%.2f", $tax);?></h4>
+        <h3>Total = <?php printf("$%.2f", $total);?></h3>
+    </div>
     <div class="choices">
         <input type="button" value="Clear Cart" id="clear" onclick="window.location.href = 'clearcart.php'">
         <input type="button" value="Return to Menu" onclick="window.location.href = 'listmenu.php'">
