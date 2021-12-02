@@ -13,7 +13,7 @@ require("includes/header.php");
 
             <div class="aboutTop">
                 <h2 class="aboutTitle">About Us</h2>
-                <p class="aboutUs">Louie's has been in the american chinese business for 10 years, and it takes quite a crew to continuously maintain the title of #1 American Chinese food hotpot for 10 years straight. But its because of our crew, our leadership, and most importantly our loyal customers that we can continue to maintain this spot. </p>
+                <p class="aboutUs">Louie's has been in the American Chinese business for 10 years, and it takes quite a crew to continuously maintain the title of #1 American Chinese food hotpot. But its because of our crew, our leadership, and most importantly our loyal customers that we can continue to maintain our position as America's favorite Chinese location! </p>
             </div>
             <br>
             <div class="aboutMid">
@@ -21,7 +21,7 @@ require("includes/header.php");
                     <h1 class="aboutTitle"> Our Mission</h1><br>
                     <h3>Here at Louie's, we are dedicated to an authentic presentation of the chinese cuisine into the american palette. Quality, Consistency, and Integrity are
                         the three most important factors that go into every dish you're served by us, and we can promise you that you'll be able to taste the fresh, locally sourced, and handmade quality that goes into every dish.
-                        Every part of our crew from our CEO Louie Zhu, to the cashier at your local restaurant pride themselves on meeting these standards, and its because of this love and caring environment that we can provide america with the best chinese they'll ever have!
+                        Every part of our crew from our CEO Louie Zhu, to the cashier at your local restaurant pride themselves on meeting these standards, and its because of this loving and caring environment that we can provide America with the best Chinese they'll ever have!
                     </h3>
                 </article>
 
