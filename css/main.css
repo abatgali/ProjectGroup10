@@ -62,12 +62,16 @@ nav a:hover {
     color: white;
 }
 
-#left_items {
-    min-width: 18em;
+#left_items li{
+    padding-left: 1rem;
+}
+
+#home_li {
+    padding-left: 0;
 }
 
 #right_items {
-    min-width: 15em;
+    min-width: 6em;
     justify-content: space-around;
 }
 
@@ -358,7 +362,7 @@ footer a {
         padding: 0;
     }
 
-    nav ul li {
+    w ul li {
         margin: .25em;
     }
 

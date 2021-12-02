@@ -41,7 +41,7 @@ if (isset($_SESSION['login']) AND isset($_SESSION['name']) AND
     <div class="container">
         <nav>
             <ul id = "left_items">
-                <li><a href="index.php">Home</a></li>
+                <li id = "home_li"><a href="index.php">Home</a></li>
                 <li><a href="listmenu.php">Menu</a></li>
                 <li><a href="about.php">About</a></li>
                 <?php
