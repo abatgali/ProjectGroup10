@@ -11,12 +11,10 @@ $title = "Login Page";
 require_once("includes/header.php");
 ?>
 <div class="loginHeading">
-    <h2>Login or Register</h2>
+    <!--<h2>Login or Register</h2> -->
 </div>
 
 <?php
-$message = "Existing Customer";
-
 $login_status = ' ';
 
 //retrieve session variable
@@ -50,7 +48,7 @@ if ($login_status == 3) {
         <form method='post' action='login.php'>
             <table>
                 <tr>
-                    <td colspan="2"><?php echo $message; ?><br><br></td>
+                    <td colspan="2"><h2>Login</h2><br><br></td>
                 </tr>
                 <tr>
                     <td style="width: 80px">Email: </td>
@@ -74,7 +72,7 @@ if ($login_status == 3) {
         <form action="register.php" method="post">
             <table>
                 <tr>
-                    <td colspan="2" align="left">If you are new to our site, please create an account.<br><br></td>
+                    <td colspan="2" align="left"><h2>Register</h2><br><br></td>
                 </tr>
                 <tr>
                     <td style="width: 85px">First Name: </td>
