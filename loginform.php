@@ -57,7 +57,7 @@ if ($login_status == 3) {
                     <td><input type='password' name='password' required></td>
                 </tr>
                 <tr>
-                    <td colspan='2' class="">
+                    <td colspan='2' class="choices">
                         <input type='submit' value='  Login  '>
                         <input type="button" name="Cancel" value="Cancel" onclick="window.location.href = 'index.php'">
                     </td>
@@ -89,7 +89,7 @@ if ($login_status == 3) {
                     <td><input name="password" type="password" required></td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="">
+                    <td colspan="2" class="choices">
                         <input type="submit" value="Register">
                         <input type="button" value="Cancel" onclick="window.location.href = 'index.php'">
                     </td>

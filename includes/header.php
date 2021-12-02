@@ -31,10 +31,11 @@ if (isset($_SESSION['login']) AND isset($_SESSION['name']) AND
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
-        <link rel="stylesheet"
-              href="https://fonts.googleapis.com/css?family=Roboto">
         <link rel="stylesheet" href="../ProjectGroup10/css/main.css">
-
+        <!--  Attaching google fonts      -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
     </head>
     <body>
     <div class="container">
@@ -44,19 +45,30 @@ if (isset($_SESSION['login']) AND isset($_SESSION['name']) AND
                 <li><a href="listmenu.php">Menu</a></li>
                 <li><a href="about.php">About</a></li>
             </ul>
-                <h1 id = "header">Lewie's Chinese Bistro</h1>
+            <h1 id = "header">Lewie's Chinese Bistro</h1>
             <ul id = "right_items">
+                <li>
+                    <input alt="cart" id="cart-image" onclick="window.location.href='cart.php'"
+                           src="images/icon-cart.png" type="image">
                 <?php
-                if(empty($login)){
-                    echo "<a href='loginform.php'>Login</a>";
-                }
-                else{
-                    echo "<a href='logout.php'>Logout</a>";
-                    echo "<span style='color:red; margin-right: 30px'Welcome $username!</span>";
-                }
-
+                // calculating total no. of items in the order
+                if (isset($_SESSION['order'])) {
+                    $order = $_SESSION['order'];
+                    $count = 0;
+                    foreach (array_keys($order) as $id) {
+                        $count += $order[$id];
+                    }
                 ?>
-                <li><input alt="cart" id="cart-image" onclick="window.location.href='cart.php'"
-                           src="../images/cart.png" type="image"></li>
+                    <div id="cartItemCounter">
+                        <?= $count; ?>
+                    </div>
+                <?php
+                // closing if statement
+                }
+                ?>
+                </li>
+                <li>
+                   <a href='loginform.php'><img src='images/user_icon.png' alt='Login'></a>
+                </li>
             </ul>
         </nav>
