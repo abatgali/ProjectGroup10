@@ -16,11 +16,7 @@ include('includes/database.php');
 <table class="menuItems">
     <?php
     //Getting default page number
-    if (isset($_GET['page'])) {
-        $page = $_GET['page'];
-    } else {
-        $page = 1;
-    }
+    $page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
 
     //Session variable
     if (session_status() == PHP_SESSION_NONE) {
@@ -64,35 +60,50 @@ include('includes/database.php');
     ?>
 </table>
 <div>
-    <?php if (ceil($total_pages / $no_of_records_per_page) > 0): ?>
+<!--    <?php /*if (ceil($total_pages / $no_of_records_per_page) > 0): */?>
         <ul class="pagination">
-            <?php if ($page > 1): ?>
-                <li class="prev"><a href="listmenu.php?page=<?php echo $page-1 ?>">Prev</a></li>
-            <?php endif; ?>
+            <?php /*if ($page > 1): */?>
+                <li class="prev"><a href="listmenu.php?page=<?php /*echo $page-1 */?>">Prev</a></li>
+            <?php /*endif; */?>
 
-            <?php if ($page > 3): ?>
+            <?php /*if ($page > 3): */?>
                 <li class="start"><a href="listmenu.php?page=1">1</a></li>
                 <li class="dots">...</li>
-            <?php endif; ?>
+            <?php /*endif; */?>
 
-            <?php if ($page-2 > 0): ?><li class="page"><a href="listmenu.php?page=<?php echo $page-2 ?>"><?php echo $page-2 ?></a></li><?php endif; ?>
-            <?php if ($page-1 > 0): ?><li class="page"><a href="listmenu.php?page=<?php echo $page-1 ?>"><?php echo $page-1 ?></a></li><?php endif; ?>
+            <?php /*if ($page-2 > 0): */?><li class="page"><a href="listmenu.php?page=<?php /*echo $page-2 */?>"><?php /*echo $page-2 */?></a></li><?php /*endif; */?>
+            <?php /*if ($page-1 > 0): */?><li class="page"><a href="listmenu.php?page=<?php /*echo $page-1 */?>"><?php /*echo $page-1 */?></a></li><?php /*endif; */?>
 
-            <li class="currentpage"><a href="listmenu.php?page=<?php echo $page ?>"><?php echo $page ?></a></li>
+            <li class="currentpage"><a href="listmenu.php?page=<?php /*echo $page */?>"><?php /*echo $page */?></a></li>
 
-            <?php if ($page+1 < ceil($total_pages / $no_of_records_per_page)+1): ?><li class="page"><a href="listmenu.php?page=<?php echo $page+1 ?>"><?php echo $page+1 ?></a></li><?php endif; ?>
-            <?php if ($page+2 < ceil($total_pages / $no_of_records_per_page)+1): ?><li class="page"><a href="listmenu.php?page=<?php echo $page+2 ?>"><?php echo $page+2 ?></a></li><?php endif; ?>
+            <?php /*if ($page+1 < ceil($total_pages / $no_of_records_per_page)+1): */?><li class="page"><a href="listmenu.php?page=<?php /*echo $page+1 */?>"><?php /*echo $page+1 */?></a></li><?php /*endif; */?>
+            <?php /*if ($page+2 < ceil($total_pages / $no_of_records_per_page)+1): */?><li class="page"><a href="listmenu.php?page=<?php /*echo $page+2 */?>"><?php /*echo $page+2 */?></a></li><?php /*endif; */?>
 
-            <?php if ($page < ceil($total_pages / $no_of_records_per_page)-2): ?>
+            <?php /*if ($page < ceil($total_pages / $no_of_records_per_page)-2): */?>
                 <li class="dots">...</li>
-                <li class="end"><a href="listmenu.php?page=<?php echo ceil($total_pages / $no_of_records_per_page) ?>"><?php echo ceil($total_pages / $no_of_records_per_page) ?></a></li>
-            <?php endif; ?>
+                <li class="end"><a href="listmenu.php?page=<?php /*echo ceil($total_pages / $no_of_records_per_page) */?>"><?php /*echo ceil($total_pages / $no_of_records_per_page) */?></a></li>
+            <?php /*endif; */?>
 
-            <?php if ($page < ceil($total_pages / $no_of_records_per_page)): ?>
-                <li class="next"><a href="listmenu.php?page=<?php echo $page+1 ?>">Next</a></li>
-            <?php endif; ?>
+            <?php /*if ($page < ceil($total_pages / $no_of_records_per_page)): */?>
+                <li class="next"><a href="listmenu.php?page=<?php /*echo $page+1 */?>">Next</a></li>
+            <?php /*endif; */?>
         </ul>
-    <?php endif; ?>
+    <?php /*endif; */?>
+
+
+-->
+    <div align="center">
+        <ul class="pagination" >
+            <li><a href="?page=1">First</a></li>
+            <li class="<?php if($page <= 1){ echo 'disabled'; } ?>">
+                <a href="<?php if($page <= 1){ echo '#'; } else { echo "?page=".($page - 1); } ?>">Prev</a>
+            </li>
+            <li class="<?php if($page >= $total_pages){ echo 'disabled'; } ?>">
+                <a href="<?php if($page >= $total_pages){ echo '#'; } else { echo "?page=".($page + 1); } ?>">Next</a>
+            </li>
+            <li><a href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
+        </ul>
+    </div>
 </div>
 </body>
 </html>
