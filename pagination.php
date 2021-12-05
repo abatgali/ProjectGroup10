@@ -47,7 +47,7 @@ include('includes/database.php');
     while ($row = mysqli_fetch_array($res_data)) {
         ?>
         <div class="row header">
-            <div class="col1"><?php echo $row['Product_name']; ?></div>
+            <div class="col1"><a href="itemDetails.php?id=<?php echo $row['Item_id']; ?>"><?php echo $row['Product_name']; ?></a></div>
             <div class="col2"><?php echo $row['Description']; ?></div>
             <div class="col3">$<?php echo $row['Price']; ?></div>
             <div> <a href="addtocart.php?id=<?= $row['Item_id'] ?>">

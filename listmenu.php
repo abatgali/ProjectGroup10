@@ -39,7 +39,7 @@ if(isset($app)){
 if(isset($ent)){
     $sql = "SELECT Item_id, Product_name, Description, Price 
             FROM $tblMenu 
-            WHERE Category_idSD = 'ent'";
+            WHERE Category_id = 'ent'";
 
     $menu_title = "Entrees";
 }
