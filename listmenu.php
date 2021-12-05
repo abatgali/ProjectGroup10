@@ -12,6 +12,7 @@ $menu_title = "Menu Items";
 require_once('includes/header.php');
 require_once('includes/database.php');
 
+
 //defining parameters and filter out warnings.
 $all    = filter_input(INPUT_POST,'all');
 $app    = filter_input(INPUT_POST,'app');
@@ -38,7 +39,7 @@ if(isset($app)){
 if(isset($ent)){
     $sql = "SELECT Item_id, Product_name, Description, Price 
             FROM $tblMenu 
-            WHERE Category_id = 'ent'";
+            WHERE Category_idSD = 'ent'";
 
     $menu_title = "Entrees";
 }
@@ -58,7 +59,6 @@ if((empty($all))&&(empty($app)) && (empty($ent)) && (empty($soup))){
 //multiple select and handling
 //One condition for multiple sections
 
-
 //to attempt a query execute
 $query = $conn -> query($sql);
 
@@ -70,8 +70,7 @@ if (!$query) {
     exit();
 }
 ?>
-    <br><br>
-
+<br><br>
     <!--4 Checkboxes for the Filtering Honors Project-->
     <form action="" method="post">
         <input type="checkbox" name="all" size="40" value="All" onchange="this.form.submit()">
@@ -86,7 +85,26 @@ if (!$query) {
         <input type="checkbox" name="soup" size="40" value="Soup" onchange="this.form.submit()">
         <label for="soups">Soups</label>
     </form>
-    <br>
+<br>
+
+<!--POST to pagination, to receive the 'term' aka num of products displayed per page. -->
+    <form action="" method="post">
+        <p>How many products would you like to have displayed?</p>
+        <label>
+            <input type="radio" name="terms" value="3" onchange="this.form.submit()"> 3 Products
+        <label>
+            <input type="radio" name="terms" value="5" onchange="this.form.submit()"> 5 Products
+        </label>
+        <label>
+            <input type="radio" name="terms" value="10" onchange="this.form.submit()"> 10 Products
+        </label>
+        <label>
+            <input type="radio" name="terms" value="20" onchange="this.form.submit()"> All Products
+        </label>
+    </form>
+<br>
+
+<br>
     <form action="searchresults.php" method="get">
         <input type="text" name="q" size="40" required>&nbsp;&nbsp;
         <input type="submit" name="Submit" id="Submit" value="Search Items">
@@ -101,22 +119,9 @@ if (!$query) {
             <div style="text-decoration: underline">Add to Cart</div>
         </div>
 
-        <!-- add PHP code here to list all menu items from the "menu" table -->
-        <?php while ($row = $query -> fetch_assoc()) { ?>
-            <div class="row">
-                <div class="col1"><a href="itemDetails.php?id=<?= $row['Item_id'] ?>"><?= $row['Product_name'] ?></a></div>
-                <div class="col2"><?= $row['Description'] ?></div>
-                <div class="col3">$<?= $row['Price'] ?></div>
-                <div>
-                    <a href="addtocart.php?id=<?= $row['Item_id'] ?>">
-                        <img src="images/plustocart.png" alt="click to add item to cart">
-                    </a>
-                </div>
-            </div>
-        <?php } ?>
-    </div>
+        <!-- add the pagination.php file here to list all menu items from the "menu" table -->
+    <?php include ("pagination.php");  ?>
 <br><br>
 
 <?php
 require_once("includes/footer.php");
-
