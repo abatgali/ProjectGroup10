@@ -41,7 +41,11 @@ include('includes/database.php');
     $result = mysqli_query($conn, $total_pages_sql);
     $total_rows = mysqli_fetch_array($result)[0];
     $total_pages = ceil($total_rows / $no_of_records_per_page);
-    $sql = "SELECT * FROM menu_items LIMIT $offset, $no_of_records_per_page";
+
+
+
+    $sql = "$lewie $offset, $no_of_records_per_page";
+
     $res_data = mysqli_query($conn, $sql);
     $cnt = 1;
     while ($row = mysqli_fetch_array($res_data)) {
