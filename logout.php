@@ -17,8 +17,10 @@ session_destroy();
 $page_title = "PHP Online Bookstore Logout";
 include('includes/header.php');
 ?>
+<div class="loginMsg">
 <h2>Logout</h2>
 <p>Thank you for your visit. You are now logged out.</p>
+</div>
 <?php
 include('includes/footer.php');
 ?>
