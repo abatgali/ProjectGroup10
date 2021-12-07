@@ -17,14 +17,14 @@ $_SESSION['login_status'] = 2;
 //initialize variables for username and password
 $username = $passcode = "";
 
-//retrieve user name and password from the form in the registerform.php
+//retrieve username and password from the form in the registerform.php
 if (isset($_POST['username']))
     $username = $conn->real_escape_string(trim($_POST['username']));
 
 if (isset($_POST['password']))
     $password = $conn->real_escape_string(trim($_POST['password']));
 
-//validate user name and password against a record in the users table in the database. If they are valid, create session variables.
+//validate username and password against a record in the users table in the database. If they are valid, create session variables.
 $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
 $query = @$conn->query($sql);
 if ($query->num_rows) {

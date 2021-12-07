@@ -4,6 +4,7 @@
     Description:    Main style sheet for Lewie's
 */
 
+
 body {
     background-image: url("../images/home_1440.jpg");
     background-attachment: fixed;
@@ -21,6 +22,7 @@ h1, h2, h3 {
     font-weight: bold;
     color: #ececec;
 }
+
 .container h3 {
     margin: auto;
     text-align: center;
@@ -478,6 +480,10 @@ form input {
     color: black;
 }
 
+.emptyCart h1 {
+    font-size: 2.5em;
+}
+
 .total {
     margin-left: auto;
     margin-right: 4em;
@@ -500,6 +506,13 @@ form input {
 #empty_img {
     opacity: 0.75;
 }
+
+.loginMsg {
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 350px;
+}
+
 .pagination {
     list-style-type: none;
     padding: 10px 0;

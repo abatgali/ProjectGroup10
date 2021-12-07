@@ -14,6 +14,5 @@
                 <p><a href="tel: 3175555555">(317) 555-5555</a></p>
             </footer>
             <script src="../ProjectGroup10/scripts/copyright.js"></script>
-        </div>
     </body>
 </html>

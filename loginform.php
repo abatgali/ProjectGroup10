@@ -22,8 +22,10 @@ if(isset($_SESSION['login_status'])){
     $login_status = $_SESSION['login_status'];
 }
 if($login_status == 1){
-    echo "<p>You are logged in as ". $_SESSION['name'] . ".</p>";
-    echo "<a href='logout.php'>Log out</a><br />";
+    echo "<div class='loginMsg'>";
+    echo "<p>Welcome " . $_SESSION['name'] . ".</p>";
+    echo "<a href='logout.php'>Log out</a><br>";
+    echo "</div>";
     include ('includes/footer.php');
     exit();
 }
@@ -33,15 +35,17 @@ if($login_status == 2) {
 }
 //the user has just registered
 if ($login_status == 3) {
+    echo "<div class='loginMsg'>";
     echo "<p>Thank you for registering with us. Your account has been created.</p>";
     echo "<a href='logout.php'>Log out</a><br />";
+    echo "</div>";
     include ('includes/footer.php');
     exit();
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <body>
+<body>
 <div class="login-container">
     <!-- display the login form -->
     <div class="loginOld">
