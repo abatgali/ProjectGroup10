@@ -366,7 +366,7 @@ footer a {
         padding: 0;
     }
 
-    w ul li {
+    nav ul li {
         margin: .25em;
     }
 
@@ -463,6 +463,19 @@ form input {
     padding-left: 0;
     color: #2C3840;
     display: inline-block;
+}
+
+.emptyCart {
+    text-align: center;
+    margin: 1.25em auto;
+    padding: 1.25em;
+    background-color: white;
+    opacity: 0.40;
+    width: 75%;
+}
+
+.emptyCart h1, .emptyCart p {
+    color: black;
 }
 
 .total {

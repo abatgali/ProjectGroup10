@@ -17,14 +17,15 @@ session_start();
 
 // tell user cart is empty if no items selected
 if (!isset($_SESSION['order']) || !$_SESSION['order']) {
-    echo "<br><div class='indexTop'><h2>Cart</h2><br>
-        <img id=\"empty_img\" src='images/empty.png' alt='nothing in cart'><br><br><br><h3>Looks empty in here, try picking items from the menu first.</h3>";
+    echo "<br><div class='emptyCart'><h1>Cart</h1><br>
+        <img id=\"empty_img\" src='images/empty.png' alt='nothing in cart'><br><br><br><p>Looks empty in here, try picking items from the menu first.</p>";
     ?>
         <input id="return" type="button" value="Return to Menu" onclick="window.location.href = 'listmenu.php'">
-    </div>
     <?php
+    echo "</div>";
     require_once 'includes/footer.php';
     exit();
+
 }
 
 // if items present, proceed
@@ -43,7 +44,9 @@ $order = $_SESSION['order'];
 
 <?php
 // display order
-$sql = "SELECT Item_id, Product_name, Price FROM menu_items WHERE 0";
+$sql = "SELECT Item_id, Product_name, Price 
+        FROM menu_items 
+        WHERE 0";
 
 foreach (array_keys($order) as $id) {
     $sql .= " OR Item_id=$id";
@@ -57,7 +60,7 @@ $results = $conn->query($sql);
 $total = 0;
 
 // fetch order items
-while ($row = $results -> fetch_assoc()) {
+while ($row = $results->fetch_assoc()) {
     $id = $row['Item_id'];
     $item = $row['Product_name'];
     $price = $row['Price'];
