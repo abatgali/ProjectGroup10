@@ -95,6 +95,7 @@ nav a:hover {
     color: white;*/
     margin: 1.25em;
     padding: 1.25em;
+    width: 90%;
 }
 
 .indexMid h2 {
@@ -103,7 +104,6 @@ nav a:hover {
 
 .featureItems {
     text-align: center;
-
     margin: 1.25em;
     display: flex;
     justify-content: space-evenly;
