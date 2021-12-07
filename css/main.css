@@ -314,6 +314,10 @@ td.choices {
     float: right;
 }
 
+.menuOptions {
+    background-color: rgba(0,0,0,0.40);
+}
+
 /* FOOTER */
 footer {
     text-align: center;

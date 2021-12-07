@@ -71,6 +71,7 @@ if (!$query) {
 }
 ?>
 <br><br>
+<div class="menuOptions">
     <!--4 Checkboxes for the Filtering Honors Project-->
     <form action="" method="post">
         <input type="checkbox" name="all" size="40" value="All" onchange="this.form.submit()">
@@ -99,6 +100,7 @@ if (!$query) {
             <input type="radio" name="terms" value="20" onchange="this.form.submit()"> All Products
         </label>
     </form>
+</div>
 <br>
 
 <br>
