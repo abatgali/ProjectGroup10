@@ -50,54 +50,57 @@ if ($login_status == 3) {
     <!-- display the login form -->
     <div class="loginOld">
         <form method='post' action='login.php'>
-            <h2>Existing Customer</h2>
-            <table>
-                <tr>
-                    <td style="width: 80px">Email: </td>
-                    <td><input type='email' name='email' required></td>
-                </tr>
-                <tr>
-                    <td>Password: </td>
-                    <td><input type='password' name='password' required></td>
-                </tr>
-                <tr>
-                    <td colspan='2' class="choices">
-                        <input type='submit' value='  Login  '>
-                        <input type="button" name="Cancel" value="Cancel" onclick="window.location.href = 'index.php'">
-                    </td>
-                </tr>
-            </table>
+            <fieldset>
+                <legend>Existing Customers</legend>
+                <table>
+                    <tr>
+                        <td style="width: 80px">Email: </td>
+                        <td><input type='email' name='email' required></td>
+                    </tr>
+                    <tr>
+                        <td>Password: </td>
+                        <td><input type='password' name='password' required></td>
+                    </tr>
+                    <tr>
+                        <td colspan='2' class="choices">
+                            <input type='submit' value='  Login  '>
+                            <input type="button" name="Cancel" value="Cancel" onclick="window.location.href = 'index.php'">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
         </form>
     </div>
     <!-- display the registration form -->
     <div class="loginNew">
         <form action="register.php" method="post">
-            <h2>New Customers</h2>
-            <table>
-                <tr>
-                    <td style="width: 85px">First Name: </td>
-                    <td><input name="firstname" type="text" required></td>
-                </tr>
-                <tr>
-                    <td>Last Name: </td>
-                    <td><input name="lastname" type="text" required></td>
-                </tr>
-                <tr>
-                    <td>Email: </td>
-                    <td><input name="email" type="email" required></td>
-                </tr>
-                <tr>
-                    <td>Password:</td>
-                    <td><input name="password" type="password" required></td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="choices">
-                        <input type="submit" value="Register">
-                        <input type="button" value="Cancel" onclick="window.location.href = 'index.php'">
-                    </td>
-                </tr>
-            </table>
-
+            <fieldset>
+                <legend>New Customers</legend>
+                <table>
+                    <tr>
+                        <td style="width: 85px">First Name: </td>
+                        <td><input name="firstname" type="text" required></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name: </td>
+                        <td><input name="lastname" type="text" required></td>
+                    </tr>
+                    <tr>
+                        <td>Email: </td>
+                        <td><input name="email" type="email" required></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input name="password" type="password" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="choices">
+                            <input type="submit" value="Register">
+                            <input type="button" value="Cancel" onclick="window.location.href = 'index.php'">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
         </form>
     </div>
 </div>
