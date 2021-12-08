@@ -119,8 +119,8 @@ if (!$query) {
         </div>
 
         <!-- add the pagination.php file here to list all menu items from the "menu" table -->
-    <?php include ("pagination.php");  ?>
+    <?php include ("pagination.php");?>
 <br><br>
-
+    </div>
 <?php
-require_once("includes/footer.php");
+require_once ("includes/footer.php");

@@ -13,24 +13,24 @@ require("includes/header.php");
 
             <div class="aboutTop">
                 <h2 class="aboutTitle">About Us</h2>
-                <p class="aboutUs">Lewie's has been in the American Chinese business for 20 years, and it takes quite a crew to continuously maintain the title of #1 American Chinese food hotpot. But its because of our crew, our leadership, and most importantly our loyal customers that we can continue to maintain our position as America's favorite Chinese location! </p>
+                <p class="aboutUs">
+                    Lewie's has been in the American Chinese business for 20 years, and it takes quite a crew to continuously maintain the title of #1 American Chinese food hotpot. But its because of our crew, our leadership, and most importantly our loyal customers that we can continue to maintain our position as America's favorite Chinese location!
+                </p>
             </div>
             <br>
             <div class="aboutMid">
-                <article>
-                    <h1 class="aboutTitle"> Our Mission</h1><br>
-                    <h3>Here at Lewie's, we are dedicated to an authentic presentation of the chinese cuisine into the american palette. Quality, Consistency, and Integrity are
-                        the three most important factors that go into every dish you're served by us, and we can promise you that you'll be able to taste the fresh, locally sourced, and handmade quality that goes into every dish.
-                        Every part of our crew from our CEO Lewie Zhu, to the cashier at your local restaurant pride themselves on meeting these standards, and its because of this loving and caring environment that we can provide America with the best Chinese they'll ever have!
-                    </h3>
-                </article>
+                <h1 class="aboutTitle"> Our Mission</h1><br>
+                <p>
+                    Here at Lewie's, we are dedicated to an authentic presentation of the chinese cuisine into the american palette. Quality, Consistency, and Integrity are
+                    the three most important factors that go into every dish you're served by us, and we can promise you that you'll be able to taste the fresh, locally sourced, and handmade quality that goes into every dish.
+                    Every part of our crew from our CEO Lewie Zhu, to the cashier at your local restaurant pride themselves on meeting these standards, and its because of this loving and caring environment that we can provide America with the best Chinese they'll ever have!
+                </p>
 
-                    <div class="aboutMidPics">
-                        <img id="aboutMidPic1" src="images/I0000dHTeoiOvkfg.jpg" alt="Place image here">
-                        <img id="aboutMidPic2" src="images/istockphoto-466666638-170667a.jpg" alt="Place image here">
-                        <img id="aboutMidPic3" src="images/portrait-happy-proud-asian-chef-smiling-camera-kitchen-successful-restaurant-culinary-business-concept-178738673.jpg" alt="Place image here">
-                    </div>
-
+                <div class="aboutMidPics">
+                    <img id="aboutMidPic1" src="images/I0000dHTeoiOvkfg.jpg" alt="Place image here">
+                    <img id="aboutMidPic2" src="images/istockphoto-466666638-170667a.jpg" alt="Place image here">
+                    <img id="aboutMidPic3" src="images/portrait-happy-proud-asian-chef-smiling-camera-kitchen-successful-restaurant-culinary-business-concept-178738673.jpg" alt="Place image here">
+                </div>
             </div>
             <br>
             <div class="aboutBottom">
