@@ -86,7 +86,6 @@ nav a:hover {
 .indexTop {
     text-align: center;
     border: 5px outset white;
-    border-radius: 25px;
     margin: 1.25em;
     padding: 1.25em;
     background-color: rgba(0,0,0,0.40);
