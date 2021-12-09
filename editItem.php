@@ -55,21 +55,31 @@ if (!$row) {
                 <!-- display item attributes  -->
                 <div class="col1">Product Name:</div>
                 <div class="col2">Price:</div>
+                <div class="col3">Category:</div>
+                <br>
                 <div class="col3">Description:</div>
             </div>
             <div class="content">
                 <!-- display item details -->
                 <div class="col1"><input name="Product_name" value="<?php echo  $row['Product_name'] ?>" required></div>
                 <div class="col2"><input name="Price" value="<?php echo  $row['Price'] ?>" required> </div>
-                <div class="col3"><input name="Description" value="<?php echo $row['Description'] ?>" required> </div>
+                <div class="col3-2" <input name="Category_id" value="<?php echo $row['Category_id'] ?>" required>
+                        <select style="width: 238px; height: 32px; " name="Category_id">
+                            <option value="a">Appetizer</option>
+                            <option value="s">Soup</option>
+                            <option value="ent">Entree</option>
+                        </select>
+                </div>
+                <div class="col4-2"><input name="Description" value="<?php echo $row['Description'] ?>" required> </div>
             </div
         </div>
         <div class="buttons">
             <input type="hidden" name="id" value="<?php echo $id ?>" />
             <input type="submit" value="Update" />
-            <input type="button" value="Cancel" onclick="window.location.href='itemDetails.php?id=<?= id ?>'" />
+            <input type="button" value="Cancel" onclick="window.location.href='itemDetails.php?id=<?= $id ?>'" />
         </div>
     </form>
+</div>
 
 <?php
 // close the connection.

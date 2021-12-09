@@ -76,7 +76,7 @@ if (isset($_SESSION['role'])) {
                    onclick="window.location.href='removeItem.php?id=<?= $id ?>'">
             <input type="button"
                    onclick="window.location.href='listMenu.php'"value="Back to Menu">
-            <div style="color: red; display: inline-block;">Are you sure you want to delete the book?</div>
+            <div style="color: red; display: inline-block;">Are you sure you want to delete the item?</div>
         </div>
     </div>
 <?php

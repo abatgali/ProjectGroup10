@@ -30,7 +30,7 @@ require_once 'includes/header.php';
             </tr>
             <tr>
                 <td style="text-align: right">Listed Price: </td>
-                <td><input name="Price" type="number" size="40" required /></td>
+                <td><input name="Price" type="number" step="0.01" size="40" required /></td>
 
             <tr>
                 <td style="text-align: right; vertical-align: top">Description:</td>
