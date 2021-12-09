@@ -33,51 +33,59 @@ $order = $_SESSION['order'];
 
 ?>
 
-<div class="menuItems">
-    <h2>My Order</h2>
-    <div class="row header">
-        <div class="col1" style="text-decoration: underline">Product</div>
-        <div class="col2" style="text-decoration: underline">Price</div>
-        <div class="col3" style="text-decoration: underline">Quantity</div>
-        <div class="col4" style="text-decoration: underline">Subtotal</div>
-        <div class="col4" style="text-decoration: underline">Remove</div>
-    </div>
+    <div class="menuItems">
+        <h2>My Order</h2>
+        <div class="row header">
+            <div class="col1" style="text-decoration: underline">Product</div>
+            <div class="col2" style="text-decoration: underline">Price</div>
+            <div class="col3" style="text-decoration: underline">Quantity</div>
+            <div class="col4" style="text-decoration: underline">Subtotal</div>
+            <div class="col4" style="text-decoration: underline">Remove</div>
+        </div>
 
-    <?php
-    // display order
-    $sql = "SELECT Item_id, Product_name, Price 
+        <?php
+        // display order
+        $sql = "SELECT Item_id, Product_name, Price 
         FROM menu_items 
         WHERE 0";
 
-    foreach (array_keys($order) as $id) {
-        $sql .= " OR Item_id=$id";
-    }
+        foreach (array_keys($order) as $id) {
+            $sql .= " OR Item_id=$id";
+        }
 
-    // execute the query
-    $results = $conn->query($sql);
+        // execute the query
+        $results = $conn->query($sql);
 
 
-    // variable to calculate total amount
-    $total = 0;
+        // variable to calculate total amount
+        $total = 0;
 
-    // fetch order items
-    while ($row = $results->fetch_assoc()) {
-    $id = $row['Item_id'];
-    $item = $row['Product_name'];
-    $price = $row['Price'];
-    $qty = $order[$id];
-    $subtotal = $qty * $price;
-    $total += $subtotal;
-    ?>
-    <div class="row">
-        <div class="col1"><a href="itemDetails.php?id=<?= $id ?>"><?= $item ?></a></div>
-            <div class="col2">$<?= $price ?></div>
-            <div class="col3"><?= $qty ?></div>
-            <div class="col4">$<?php printf("%.2f", $subtotal); ?></div>
-            <div class="col5"><a style="color:red" href="removeFromCart.php?id=<?= $row['Item_id']?>">Remove</a> </div>
-        </div>
-        <?php
-        // closing the while loop
+        // fetch order items
+        while ($row = $results->fetch_assoc()) {
+            $id = $row['Item_id'];
+            $item = $row['Product_name'];
+            $price = $row['Price'];
+            $qty = $order[$id];
+            $subtotal = $qty * $price;
+            $total += $subtotal;
+            ?>
+            <div class="row">
+                <div class="col1"><a href="itemDetails.php?id=<?= $id ?>"><?= $item ?></a></div>
+                <div class="col2">$<?= $price ?></div>
+                <div class="col3">
+                        <a href="increaseQuant.php?id=<?= $row['Item_id'] ?>">+ &nbsp;&nbsp;&nbsp;<a/>
+                        <?= $qty ?>
+                        <a href="decreaseQuant.php?id=<?= $row['Item_id'] ?>">&nbsp;&nbsp;&nbsp; -<a/>
+                </div>
+                <div class="col4">$<?php printf("%.2f", $subtotal); ?></div>
+                <div class="col5"><a style="color:red" href="removeFromCart.php?id=<?= $row['Item_id'] ?>">Remove</a>
+                </div>
+            </div>
+            <?php
+            // closing the while loop
+        }
+        if ($qty == 0) {
+            unset($order[$id]);
         }
 
         $tax = 0.07 * $total;
@@ -94,7 +102,7 @@ $order = $_SESSION['order'];
             <input type="button" value="Checkout" onclick="window.location.href = 'checkout.php'">
         </div>
     </div>
-=
+    =
 <?php
 
 include 'includes/footer.php';
