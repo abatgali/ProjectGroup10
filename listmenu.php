@@ -81,6 +81,7 @@ if (!$query) {
             }
             ?>
         </ul>
+        <br>
         <div class="row header">
             <div class="col1" style="text-decoration: underline">Product</div>
             <div class="col2" style="text-decoration: underline">Description</div>
@@ -102,7 +103,7 @@ if (!$query) {
         <?php
         }
         ?>
-
+        <br>
         <!-- Buttons to switch between pages  -->
         <ul class="paginate">
             <?php
