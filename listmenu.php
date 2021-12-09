@@ -3,63 +3,44 @@
  * Date: 11/10/2021*
  * File: listmenu.php*
  * Description: THIS FILE CONNECTS OUR WEBPAGE TO THE entrees_louies DATABASE*/
-?>
 
-<?php
 $title = "Our Menu";
 $menu_title = "Menu Items";
 
 require_once('includes/header.php');
 require_once('includes/database.php');
 
+// finding total number of menu items
+$queryfortotalrows = "SELECT COUNT(*) FROM menu_items";
+$result = mysqli_query( $conn, $queryfortotalrows);
+$total = mysqli_fetch_row($result)[0];
 
-//defining parameters and filter out warnings.
-$all    = filter_input(INPUT_POST,'all');
-$app    = filter_input(INPUT_POST,'app');
-$ent    = filter_input(INPUT_POST,'ent');
-$soup   = filter_input(INPUT_POST,'soup');
+$rowsPerPage = 6;
 
+// number of pages sharing menu items
+$pages = ceil($total / $rowsPerPage);
 
-//Grabbing post data for all menu items
-if(isset($all)){
-    $sql = "SELECT Item_id, Product_name, Description, Price 
-            FROM $tblMenu";
+/*if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+    $_SESSION['page_position'] = 0;
+}*/
 
-    $menu_title = "Menu Items";
+// getting the page selected from the url
+if (isset($_GET['pg'])) {
+    $pg = filter_input(INPUT_GET, 'pg', FILTER_SANITIZE_NUMBER_INT);
 }
-//Grabbing post data for the appetizers
-if(isset($app)){
-    $sql = "SELECT Item_id, Product_name, Description, Price 
-            FROM $tblMenu 
-            WHERE Category_id = 'a'";
-
-    $menu_title = "Appetizers";
+else{
+    $pg = 1;
 }
-//Grabbing post data for the entrees
-if(isset($ent)){
-    $sql = "SELECT Item_id, Product_name, Description, Price 
-            FROM $tblMenu 
-            WHERE Category_id = 'ent'";
 
-    $menu_title = "Entrees";
-}
-//Grabbing post data for the soup
-if(isset($soup)){
-    $sql = "SELECT Item_id, Product_name, Description, Price 
-            FROM $tblMenu 
-            WHERE Category_id = 's'";
+$offset = ($pg - 1) * $rowsPerPage;
 
-    $menu_title = "Soups";
-}
-//Grabbing all menu items, menu display.
-if((empty($all))&&(empty($app)) && (empty($ent)) && (empty($soup))){
-    $sql = "SELECT * 
-            FROM $tblMenu";
-}
-//multiple select and handling
-//One condition for multiple sections
+// query for fetching menu items 6 items(max) at a time
+$sql = "SELECT * FROM menu_items LIMIT $offset, $rowsPerPage";
 
-//to attempt a query execute
+$res_data = mysqli_query($conn, $sql);
+
+// attempt a query execute
 $query = $conn -> query($sql);
 
 //Error handling
@@ -69,46 +50,14 @@ if (!$query) {
     header("Location: error.php?m=$error");
     exit();
 }
+
 ?>
-<br><br>
-<div class="menuOptions">
-    <!--4 Checkboxes for the Filtering Honors Project-->
-    <form action="" method="post">
-        <input type="checkbox" name="all" size="40" value="All" onchange="this.form.submit()">
-        <label for="all">All Items</label>
-
-        <input type="checkbox" name="app" size="40" value="Appetizers" onchange="this.form.submit()">
-        <label for="appetizers">Appetizers</label>
-
-        <input type="checkbox" name="ent" size="40" value="Entrees" onchange="this.form.submit()">
-        <label for="entrees">Entrees</label>
-
-        <input type="checkbox" name="soup" size="40" value="Soup" onchange="this.form.submit()">
-        <label for="soups">Soups</label>
-    </form>
-<br>
-
-<!--POST to pagination, to receive the 'term' aka num of products displayed per page. -->
-    <form action="" method="post">
-        <p>How many products would you like to have displayed?</p>
-        <label>
-            <input type="radio" name="terms" value="3" onchange="this.form.submit()"> 3 Products
-        <label>
-            <input type="radio" name="terms" value="5" onchange="this.form.submit()"> 5 Products
-        </label>
-        <label>
-            <input type="radio" name="terms" value="20" onchange="this.form.submit()"> All Products
-        </label>
-    </form>
-</div>
-<br>
 
 <br>
     <form action="searchresults.php" method="get">
         <input type="text" name="q" size="40" required>&nbsp;&nbsp;
         <input type="submit" name="Submit" id="Submit" value="Search Items">
     </form>
-    <br>
     <div class="menuItems">
         <h2><?php echo $menu_title ?></h2>
         <div class="row header">
@@ -118,9 +67,42 @@ if (!$query) {
             <div style="text-decoration: underline">Add to Cart</div>
         </div>
 
-        <!-- add the pagination.php file here to list all menu items from the "menu" table -->
-    <?php include ("pagination.php");?>
-<br><br>
-    </div>
+        <?php
+        while ($row = mysqli_fetch_array($res_data)) {
+        ?>
+        <div class="row header">
+            <div class="col1"><a href="itemDetails.php?id=<?php echo $row['Item_id']; ?>"><?php echo $row['Product_name']; ?></a></div>
+            <div class="col2"><?php echo $row['Description']; ?></div>
+            <div class="col3">$<?php echo $row['Price']; ?></div>
+            <div> <a href="addtocart.php?id=<?= $row['Item_id'] ?>">
+                    <img src="images/plustocart.png" alt="click to add item to cart">
+                </a></div>
+        </div>
+        <?php
+        }
+        ?>
+
+        <!-- Buttons to switch between pages  -->
+        <ul class="paginate">
+            <?php
+            if ($pg != 1)
+            {
+            ?>
+                <li><a href='<?=$_SERVER['PHP_SELF']?>?pg=<?= $pg - 1 ?>'>Prev</a></li>
+            <?php
+            }
+            for ($i = 1; $i <= $pages; $i++) {
+            ?>
+                <li><a href='<?=$_SERVER['PHP_SELF']?>?pg=<?= $i ?>'><?php echo $i ; ?></a></li>
+            <?php
+            }
+            if ($pg != $pages) {
+            ?>
+            <li><a href="<?=$_SERVER['PHP_SELF']?>?pg=<?= $pg + 1 ?>">Next</a></li>
+            <?php
+            }
+            ?>
+        </ul>
+</div>
 <?php
-require_once ("includes/footer.php");
+require_once("includes/footer.php");
