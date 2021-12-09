@@ -40,6 +40,7 @@ $order = $_SESSION['order'];
         <div class="col2" style="text-decoration: underline">Price</div>
         <div class="col3" style="text-decoration: underline">Quantity</div>
         <div class="col4" style="text-decoration: underline">Subtotal</div>
+        <div class="col4" style="text-decoration: underline">Remove</div>
     </div>
 
     <?php
@@ -73,6 +74,7 @@ $order = $_SESSION['order'];
             <div class="col2">$<?= $price ?></div>
             <div class="col3"><?= $qty ?></div>
             <div class="col4">$<?php printf("%.2f", $subtotal); ?></div>
+            <div class="col5"><a style="color:red" href="removeFromCart.php?id=<?= $row['Item_id']?>">Remove</a> </div>
         </div>
         <?php
         // closing the while loop
