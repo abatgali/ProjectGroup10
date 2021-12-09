@@ -51,7 +51,7 @@ if (!$row) {
     <h2 class="aboutTop">Edit <?php $row['Product_name'] ?></h2>
     <form action="updateItem.php" method="post">
         <div class="menuDetails">
-            <div class="label">
+            <div class="label" style="margin: auto;">
                 <!-- display item attributes  -->
                 <div class="col1">Product Name:</div>
                 <div class="col2">Price:</div>

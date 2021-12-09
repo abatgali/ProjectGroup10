@@ -36,7 +36,12 @@ if($login_status == 2) {
 //the user has just registered
 if ($login_status == 3) {
     echo "<div class='loginMsg'>";
-    echo "<p>Thank you for registering with us. Your account has been created.</p>";
+    echo "<p>Welcome " . $_SESSION['name'] . ".</p>";
+    $count = 0;
+    if($count == 0) {
+        $count += 1;
+        echo "<p>Thank you for registering with us. Your account has been created.</p>";
+    }
     echo "<a href='logout.php'>Log out</a><br />";
     echo "</div>";
     include ('includes/footer.php');
