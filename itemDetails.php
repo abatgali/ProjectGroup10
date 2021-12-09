@@ -60,15 +60,27 @@ if (isset($_SESSION['role'])) {
     <div class="menuDetails">
         <div class="label">
             <!-- display item attributes  -->
-            <div class="col1">Product Name:</div>
+            <div class="col1">Product:</div>
             <div class="col2">Price:</div>
-            <div class="col3">Description:</div>
+            <div class="col3">Category:</div>
+            <br>
+            <div class="col4">Description:</div>
         </div>
         <div class="content">
             <!-- display item details -->
             <div class="col1"><?= $row['Product_name'] ?></div>
             <div class="col2">$<?= $row['Price'] ?></div>
-            <div class="col3"><?= $row['Description'] ?></div>
+            <?php if($row['Category_id'] == 's'){?>
+                <div class="col3">Soup</div><?php
+            }elseif($row['Category_id'] == 'ent'){?>
+                <div class="col3"Entree></div>
+            <?php}elseif($row['Category_id'] == 'a'){?>
+                <div class="col3"Appetizer></div>
+            <?php }else{?>
+                <div class="col3">Miscellaneous</div>
+            <?php } ?>
+            <br>
+            <div class="col4"><?= $row['Description'] ?></div>
         </div
     </div>
     <?php

@@ -30,6 +30,6 @@ if (!$query) {
     header("Location: error.php?m=$error");
     die();
 }
-echo "<p>The book has been successfully deleted from the database.</p>";
+echo "<p>The item has been successfully deleted from the database.</p>";
 $conn->close();
 require_once 'includes/footer.php';
