@@ -60,6 +60,27 @@ if (!$query) {
     </form>
     <div class="menuItems">
         <h2><?php echo $menu_title ?></h2>
+        <!-- Buttons to switch between pages  -->
+        <ul class="paginate">
+            <?php
+            if ($pg != 1)
+            {
+                ?>
+                <li><a href='<?=$_SERVER['PHP_SELF']?>?pg=<?= $pg - 1 ?>'>Prev</a></li>
+                <?php
+            }
+            for ($i = 1; $i <= $pages; $i++) {
+                ?>
+                <li><a href='<?=$_SERVER['PHP_SELF']?>?pg=<?= $i ?>'><?php echo $i ; ?></a></li>
+                <?php
+            }
+            if ($pg != $pages) {
+                ?>
+                <li><a href="<?=$_SERVER['PHP_SELF']?>?pg=<?= $pg + 1 ?>">Next</a></li>
+                <?php
+            }
+            ?>
+        </ul>
         <div class="row header">
             <div class="col1" style="text-decoration: underline">Product</div>
             <div class="col2" style="text-decoration: underline">Description</div>
