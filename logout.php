@@ -14,7 +14,7 @@ setcookie(session_name(), "", time() - 3600);
 //destroy the session
 session_destroy();
 
-$page_title = "PHP Online Bookstore Logout";
+$page_title = "Logout";
 include('includes/header.php');
 ?>
 <div class="loginMsg">
