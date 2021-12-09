@@ -1,4 +1,4 @@
- <?php
+<?php
 /**
  * Author: James Ritter
  * Date: $(DATE)
@@ -7,12 +7,12 @@
  **/
 
 $title = "Order Now";
-require_once ("includes/header.php");
-require_once ("includes/database.php");
+require_once("includes/header.php");
+require_once("includes/database.php");
 
 // begin session if it doesn't exist already
 if (session_status() == PHP_SESSION_NONE) {
-session_start();
+    session_start();
 }
 
 // tell user cart is empty if no items selected
@@ -20,7 +20,7 @@ if (!isset($_SESSION['order']) || !$_SESSION['order']) {
     echo "<br><div class='emptyCart'><h1>Cart</h1><br>
         <img id=\"empty_img\" src='images/empty.png' alt='nothing in cart'><br><br><br><p>Looks empty in here, try picking items from the menu first.</p>";
     ?>
-        <input id="return" type="button" value="Return to Menu" onclick="window.location.href = 'listmenu.php'">
+    <input id="return" type="button" value="Return to Menu" onclick="window.location.href = 'listmenu.php'">
     <?php
     echo "</div>";
     require_once 'includes/footer.php';
@@ -34,65 +34,65 @@ $order = $_SESSION['order'];
 ?>
 
 <div class="menuItems">
-<h2>My Order</h2>
-<div class="row header">
-    <div class="col1" style="text-decoration: underline">Product</div>
-    <div class="col2" style="text-decoration: underline">Price</div>
-    <div class="col3" style="text-decoration: underline">Quantity</div>
-    <div class="col4" style="text-decoration: underline">Subtotal</div>
-</div>
+    <h2>My Order</h2>
+    <div class="row header">
+        <div class="col1" style="text-decoration: underline">Product</div>
+        <div class="col2" style="text-decoration: underline">Price</div>
+        <div class="col3" style="text-decoration: underline">Quantity</div>
+        <div class="col4" style="text-decoration: underline">Subtotal</div>
+    </div>
 
-<?php
-// display order
-$sql = "SELECT Item_id, Product_name, Price 
+    <?php
+    // display order
+    $sql = "SELECT Item_id, Product_name, Price 
         FROM menu_items 
         WHERE 0";
 
-foreach (array_keys($order) as $id) {
-    $sql .= " OR Item_id=$id";
-}
+    foreach (array_keys($order) as $id) {
+        $sql .= " OR Item_id=$id";
+    }
 
-// execute the query
-$results = $conn->query($sql);
+    // execute the query
+    $results = $conn->query($sql);
 
 
-// variable to calculate total amount
-$total = 0;
+    // variable to calculate total amount
+    $total = 0;
 
-// fetch order items
-while ($row = $results->fetch_assoc()) {
+    // fetch order items
+    while ($row = $results->fetch_assoc()) {
     $id = $row['Item_id'];
     $item = $row['Product_name'];
     $price = $row['Price'];
     $qty = $order[$id];
     $subtotal = $qty * $price;
     $total += $subtotal;
-?>
+    ?>
     <div class="row">
         <div class="col1"><a href="itemDetails.php?id=<?= $id ?>"><?= $item ?></a></div>
-        <div class="col2">$<?= $price ?></div>
-        <div class="col3"><?= $qty ?></div>
-        <div class="col4">$<?php printf("%.2f", $subtotal);?></div>
-    </div>
-<?php
-// closing the while loop
-}
+            <div class="col2">$<?= $price ?></div>
+            <div class="col3"><?= $qty ?></div>
+            <div class="col4">$<?php printf("%.2f", $subtotal); ?></div>
+        </div>
+        <?php
+        // closing the while loop
+        }
 
-$tax = 0.07 * $total;
-$total = $total + $tax;
+        $tax = 0.07 * $total;
+        $total = $total + $tax;
 
-?>
-    <div class="total">
-        <h4>Taxes (7%) = <?php printf("$%.2f", $tax);?></h4>
-        <h3>Total = <?php printf("$%.2f", $total);?></h3>
+        ?>
+        <div class="total">
+            <h4>Taxes (7%) = <?php printf("$%.2f", $tax); ?></h4>
+            <h3>Total = <?php printf("$%.2f", $total); ?></h3>
+        </div>
+        <div class="choices">
+            <input type="button" value="Clear Cart" id="clear" onclick="window.location.href = 'clearcart.php'">
+            <input type="button" value="Return to Menu" onclick="window.location.href = 'listmenu.php'">
+            <input type="button" value="Checkout" onclick="window.location.href = 'checkout.php'">
+        </div>
     </div>
-    <div class="choices">
-        <input type="button" value="Clear Cart" id="clear" onclick="window.location.href = 'clearcart.php'">
-        <input type="button" value="Return to Menu" onclick="window.location.href = 'listmenu.php'">
-        <input type="button" value="Checkout" onclick="window.location.href = 'checkout.php'">
-    </div>
-</div>
-
+=
 <?php
 
 include 'includes/footer.php';

@@ -71,13 +71,13 @@ if (isset($_SESSION['role'])) {
             <div class="col1"><?= $row['Product_name'] ?></div>
             <div class="col2">$<?= $row['Price'] ?></div>
             <?php if($row['Category_id'] == 's'){?>
-                <div class="col3">Soup</div><?php
-            }elseif($row['Category_id'] == 'ent'){?>
-                <div class="col3"Entree></div>
-            <?php}elseif($row['Category_id'] == 'a'){?>
-                <div class="col3"Appetizer></div>
+                    <div class="col3">Soup</div>
+            <?php }elseif($row['Category_id'] == 'ent'){?>
+                    <div class="col3">Entree</div>
+            <?php }elseif($row['Category_id'] == 'a'){?>
+                    <div class="col3">Appetizer</div>
             <?php }else{?>
-                <div class="col3">Miscellaneous</div>
+                    <div class="col3">Miscellaneous</div>
             <?php } ?>
             <br>
             <div class="col4"><?= $row['Description'] ?></div>

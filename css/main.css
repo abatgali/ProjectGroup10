@@ -264,7 +264,11 @@ nav a:hover {
     padding:0 5rem;
 }
 
-.menuItems .col3, .col4 {
+.menuItems .col3 {
+    width: 10rem;
+}
+
+.menuItems .col4 {
     width: 8rem;
   }
 
@@ -293,7 +297,7 @@ form {
     min-width: 200px;
 }
 
-.menuDetails .col1, .menuDetails .col2, .menuDetails .col3 {
+.menuDetails .col1, .menuDetails .col2, .menuDetails .col3 .menuDetails .col4 {
     width: auto;
     padding-right: 50px;
 }
@@ -303,6 +307,18 @@ form {
 }
 
 .menuDetails .col2 {
+    height: 50px;
+}
+
+.menuDetails .col3-2{
+    width: auto;
+    padding-right: 50px;
+    height: 50px;
+}
+
+.menuDetails .col4-2{
+    width: auto;
+    padding-right: 50px;
     height: 50px;
 }
 
