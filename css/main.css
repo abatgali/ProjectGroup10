@@ -4,6 +4,7 @@
     Description:    Main style sheet for Lewie's
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Smooch&display=swap');
 
 body {
     background-image: url("../images/home_1440.jpg");
@@ -25,7 +26,8 @@ h1, h2, h3 {
 
 #header {
     font-size: 2.5em;
-    font-family: "Lucida Handwriting";
+    font-family: 'Smooch', cursive;
+    letter-spacing: .15em;
 }
 
 .container h3 {
