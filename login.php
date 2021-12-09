@@ -25,8 +25,12 @@ if (isset($_POST['password']))
     $password = $conn->real_escape_string(trim($_POST['password']));
 
 //validate username and password against a record in the users table in the database. If they are valid, create session variables.
-$sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+$sql = "SELECT * 
+        FROM users 
+        WHERE username='$username' AND password='$password'";
+
 $query = @$conn->query($sql);
+
 if ($query->num_rows) {
     //It is a valid user. Need to store the user in session variables.
     $row = $query->fetch_assoc();

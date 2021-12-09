@@ -23,11 +23,11 @@ $tblFortune     = "fortunes"; //fortunes table
 
 
 //connecting to MySQL server
-$conn = @ new mysqli($host, $login, $password, $database);
+$conn = @new mysqli($host, $login, $password, $database);
 
 //Handle connection errors
-if($conn -> connect_errno){
-    $error = $conn -> connect_error;
+if($conn->connect_errno){
+    $error = $conn->connect_error;
     header("Location: error.php?m=$error");
     exit;
 }

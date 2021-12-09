@@ -15,10 +15,13 @@ if (!isset($_SESSION['login'])) {
     header("Location: loginform.php");
     exit();
 }
+
 //empty the shopping cart
 $_SESSION['order'] = array();
+
 //displays the title
 $title = 'Check Out';
+
 //display the header
 require_once('includes/header.php');
 ?>
