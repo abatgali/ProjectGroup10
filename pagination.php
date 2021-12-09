@@ -105,7 +105,7 @@ include('includes/database.php');
             <li class="<?php if($page >= $total_pages){ echo 'disabled'; } ?>">
                 <a href="<?php if($page >= $total_pages){ echo '#'; } else { echo "?page=".($page + 1); } ?>">Next</a>
             </li>
-            <li><a href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
+            <li><a href="?page=<?php echo $total_pages; ?>">Last</a></li>
         </ul>
     </div>
 </div>
