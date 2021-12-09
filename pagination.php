@@ -1,5 +1,5 @@
 <?php
-/*** Author: Alex Weber*
+/*** Author: group 10*
  * Date: 12/3/2021*
  * File: pagination.php*
  * Description: Using pagination to display multiple search results from the database*/
@@ -16,7 +16,7 @@ include('includes/database.php');
 <table class="menuItems">
     <?php
     //Getting default page number
-    $page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
+    //$page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
 
     //Session variable
     if (session_status() == PHP_SESSION_NONE) {

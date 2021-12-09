@@ -1,5 +1,5 @@
 <?php
-/*** Author: Alex*
+/*** Author: isaac*
  * Date: 11/11/2021*
  * File: itemDetails.php*
  * Description: This script displays details of a particular menu item*/
