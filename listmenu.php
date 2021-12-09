@@ -97,7 +97,7 @@ if (!$query) {
             <input type="radio" name="terms" value="5" onchange="this.form.submit()"> 5 Products
         </label>
         <label>
-            <input type="radio" name="terms" value="20" onchange="this.form.submit()"> All Products
+            <input type="radio" name="terms" value="20" onchange="this.form.submit()"> 20 Products
         </label>
     </form>
 </div>
