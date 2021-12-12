@@ -41,11 +41,7 @@ include('includes/database.php');
     $result = mysqli_query($conn, $total_pages_sql);
     $total_rows = mysqli_fetch_array($result)[0];
     $total_pages = ceil($total_rows / $no_of_records_per_page);
-
-
-
     $sql = "$lewie $offset, $no_of_records_per_page";
-
     $res_data = mysqli_query($conn, $sql);
     $cnt = 1;
     while ($row = mysqli_fetch_array($res_data)) {
@@ -64,38 +60,6 @@ include('includes/database.php');
     ?>
 </table>
 <div>
-<!--    <?php /*if (ceil($total_pages / $no_of_records_per_page) > 0): */?>
-        <ul class="pagination">
-            <?php /*if ($page > 1): */?>
-                <li class="prev"><a href="listmenu.php?page=<?php /*echo $page-1 */?>">Prev</a></li>
-            <?php /*endif; */?>
-
-            <?php /*if ($page > 3): */?>
-                <li class="start"><a href="listmenu.php?page=1">1</a></li>
-                <li class="dots">...</li>
-            <?php /*endif; */?>
-
-            <?php /*if ($page-2 > 0): */?><li class="page"><a href="listmenu.php?page=<?php /*echo $page-2 */?>"><?php /*echo $page-2 */?></a></li><?php /*endif; */?>
-            <?php /*if ($page-1 > 0): */?><li class="page"><a href="listmenu.php?page=<?php /*echo $page-1 */?>"><?php /*echo $page-1 */?></a></li><?php /*endif; */?>
-
-            <li class="currentpage"><a href="listmenu.php?page=<?php /*echo $page */?>"><?php /*echo $page */?></a></li>
-
-            <?php /*if ($page+1 < ceil($total_pages / $no_of_records_per_page)+1): */?><li class="page"><a href="listmenu.php?page=<?php /*echo $page+1 */?>"><?php /*echo $page+1 */?></a></li><?php /*endif; */?>
-            <?php /*if ($page+2 < ceil($total_pages / $no_of_records_per_page)+1): */?><li class="page"><a href="listmenu.php?page=<?php /*echo $page+2 */?>"><?php /*echo $page+2 */?></a></li><?php /*endif; */?>
-
-            <?php /*if ($page < ceil($total_pages / $no_of_records_per_page)-2): */?>
-                <li class="dots">...</li>
-                <li class="end"><a href="listmenu.php?page=<?php /*echo ceil($total_pages / $no_of_records_per_page) */?>"><?php /*echo ceil($total_pages / $no_of_records_per_page) */?></a></li>
-            <?php /*endif; */?>
-
-            <?php /*if ($page < ceil($total_pages / $no_of_records_per_page)): */?>
-                <li class="next"><a href="listmenu.php?page=<?php /*echo $page+1 */?>">Next</a></li>
-            <?php /*endif; */?>
-        </ul>
-    <?php /*endif; */?>
-
-
--->
     <div align="center">
         <ul class="pagination" >
             <li><a href="?page=1">First</a></li>

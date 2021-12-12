@@ -112,13 +112,20 @@ if (!$query) {
             <input type="radio" name="terms" value="5" onchange="this.form.submit()"> 5 Products
         </label>
         <label>
-            <input type="radio" name="terms" value="20" onchange="this.form.submit()"> All Products
+            <input type="radio" name="terms" value="21" onchange="this.form.submit()"> All Products
         </label>
     </form>
 <br>
 
 <br>
     <form action="searchresults.php" method="get">
+
+        <input type="radio" name="w" value="true">
+        <label>Find all of my search terms</label>
+
+        <input type="radio" name="w" value="false">
+        <label>Find any of my search terms</label>
+
         <input type="text" name="q" size="40" required>&nbsp;&nbsp;
         <input type="submit" name="Submit" id="Submit" value="Search Items">
     </form>
